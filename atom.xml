@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>做牛当码</title>
+  
+  <subtitle>滑稽树上滑稽果，滑稽树下你和我（手动滑稽）</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://lazy-hub.com/"/>
+  <updated>2019-06-11T03:03:44.453Z</updated>
+  <id>https://lazy-hub.com/</id>
+  
+  <author>
+    <name>苏格兰圆脸滑稽</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Laravel 5.7 新特性之邮箱验证</title>
+    <link href="https://lazy-hub.com/2019-06-11-Laravel_5_7_Email_Verification.html"/>
+    <id>https://lazy-hub.com/2019-06-11-Laravel_5_7_Email_Verification.html</id>
+    <published>2019-06-10T23:34:05.000Z</published>
+    <updated>2019-06-11T03:03:44.453Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ul&gt;
+&lt;li&gt;创建一个 Laravel 项目&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="Laravel 5.7 新特性" scheme="https://lazy-hub.com/categories/Laravel-5-7-%E6%96%B0%E7%89%B9%E6%80%A7/"/>
+    
+    
+      <category term="Laravel" scheme="https://lazy-hub.com/tags/Laravel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从零开始Go之常量定义</title>
+    <link href="https://lazy-hub.com/2019-06-08-Go_From_Scratch_3.html"/>
+    <id>https://lazy-hub.com/2019-06-08-Go_From_Scratch_3.html</id>
+    <published>2019-06-08T02:14:57.000Z</published>
+    <updated>2019-06-11T03:03:44.460Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;Go 语言中的常量不要大写，在Go语言中，首字母大小写是有含义的&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;普通常量定义&quot;&gt;&lt;a href=&quot;#普通常量定义&quot; class=&quot;headerlink&quot; title=&quot;普通常量定义&quot;&gt;&lt;/a&gt;普通常量定义&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;单个常量定义&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight go&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; logname &lt;span class=&quot;keyword&quot;&gt;string&lt;/span&gt; = &lt;span class=&quot;string&quot;&gt;&quot;errorlog&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;等同于：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight go&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; logname = &lt;span class=&quot;string&quot;&gt;&quot;errorlog&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;多个常量赋值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight go&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; a,b,c = &lt;span class=&quot;string&quot;&gt;&quot;hello&quot;&lt;/span&gt;, &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;括号表示法&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight go&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; (&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		log = &lt;span class=&quot;string&quot;&gt;&quot;error.log&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		a, b = &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;, &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="从零开始Go" scheme="https://lazy-hub.com/categories/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8BGo/"/>
+    
+    
+      <category term="从零开始Go" scheme="https://lazy-hub.com/tags/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8BGo/"/>
+    
+      <category term="Go" scheme="https://lazy-hub.com/tags/Go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从零开始Go之变量类型与类型转换</title>
+    <link href="https://lazy-hub.com/2019-06-08-Go_From_Scratch_2.html"/>
+    <id>https://lazy-hub.com/2019-06-08-Go_From_Scratch_2.html</id>
+    <published>2019-06-08T01:41:31.000Z</published>
+    <updated>2019-06-11T03:03:44.460Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;内置变量类型&quot;&gt;&lt;a href=&quot;#内置变量类型&quot; class=&quot;headerlink&quot; title=&quot;内置变量类型&quot;&gt;&lt;/a&gt;内置变量类型&lt;/h2&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&quot;center&quot;&gt;类别&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;类型与描述&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;整型&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;uint8&lt;/strong&gt; &lt;br&gt;无符号 8 位整型 (0 到 255)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;整型&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;uint16&lt;/strong&gt; &lt;br&gt;无符号 16 位整型 (0 到 65535)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;整型&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;uint32&lt;/strong&gt; &lt;br&gt;无符号 32 位整型 (0 到 4294967295)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;整型&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;uint64&lt;/strong&gt; &lt;br&gt;无符号 64 位整型 (0 到 18446744073709551615)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;整型&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;int8&lt;/strong&gt; &lt;br&gt;有符号 8 位整型 (-128 到 127)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;整型&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;int16&lt;/strong&gt; &lt;br&gt;有符号 16 位整型 (-32768 到 32767)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;整型&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;int32&lt;/strong&gt; &lt;br&gt;有符号 32 位整型 (-2147483648 到 2147483647)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;整型&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;int64&lt;/strong&gt; &lt;br&gt;有符号 64 位整型 (-9223372036854775808 到 9223372036854775807)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;整型&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;byte&lt;/strong&gt; &lt;br&gt;类似 uint8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;整型&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;rune&lt;/strong&gt; &lt;br&gt;类似 int32 是支持utf8的char类型&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;整型&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;uint&lt;/strong&gt;&lt;br&gt; 32 或 64 位&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;整型&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;int&lt;/strong&gt;&lt;br&gt;与 uint 一样大小&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;整型&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;uintptr&lt;/strong&gt; 无符号整型，用于存放一个指针&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;浮点&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;float32&lt;/strong&gt;&lt;br&gt;IEEE-754 32位浮点型数&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;浮点&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;float64&lt;/strong&gt;&lt;br&gt;IEEE-754 64位浮点型数&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;浮点&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;complex64&lt;/strong&gt;&lt;br&gt;32 位实数和虚数&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;浮点&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;complex128&lt;/strong&gt;&lt;br&gt;64 位实数和虚数&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;布尔&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;bool&lt;/strong&gt; true 或 false&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&quot;center&quot;&gt;字符串&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;string&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+    
+    </summary>
+    
+      <category term="从零开始Go" scheme="https://lazy-hub.com/categories/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8BGo/"/>
+    
+    
+      <category term="从零开始Go" scheme="https://lazy-hub.com/tags/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8BGo/"/>
+    
+      <category term="Go" scheme="https://lazy-hub.com/tags/Go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从零开始Go之变量定义</title>
+    <link href="https://lazy-hub.com/2019-06-08-Go_From_Scratch_1.html"/>
+    <id>https://lazy-hub.com/2019-06-08-Go_From_Scratch_1.html</id>
+    <published>2019-06-08T00:58:53.000Z</published>
+    <updated>2019-06-11T03:03:44.460Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Golang 在定义变量时，与大多数主流语言不同，先定义变量名，再定义变量类型。&lt;/p&gt;
+&lt;h2 id=&quot;变量默认初始值&quot;&gt;&lt;a href=&quot;#变量默认初始值&quot; class=&quot;headerlink&quot; title=&quot;变量默认初始值&quot;&gt;&lt;/a&gt;变量默认初始值&lt;/h2&gt;&lt;p&gt;Go语言定义变量后都有一个合理的初始值&lt;/p&gt;
+&lt;figure class=&quot;highlight go&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;package&lt;/span&gt; main&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;fmt&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;  &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; s &lt;span class=&quot;keyword&quot;&gt;string&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	fmt.Printf(&lt;span class=&quot;string&quot;&gt;&quot;%d %q\n&quot;&lt;/span&gt;,a, s)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;输出结果：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;0 &amp;quot;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="从零开始Go" scheme="https://lazy-hub.com/categories/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8BGo/"/>
+    
+    
+      <category term="从零开始Go" scheme="https://lazy-hub.com/tags/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8BGo/"/>
+    
+      <category term="Go" scheme="https://lazy-hub.com/tags/Go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot学习之日志的使用与配置</title>
+    <link href="https://lazy-hub.com/2019-06-01-SpringBoot-Log.html"/>
+    <id>https://lazy-hub.com/2019-06-01-SpringBoot-Log.html</id>
+    <published>2019-06-01T03:07:16.000Z</published>
+    <updated>2019-06-11T03:03:44.458Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;基本使用&quot;&gt;&lt;a href=&quot;#基本使用&quot; class=&quot;headerlink&quot; title=&quot;基本使用&quot;&gt;&lt;/a&gt;基本使用&lt;/h2&gt;&lt;p&gt;利用 SpringBoot 内置的 &lt;code&gt;slf4j&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;最基础的使用:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;package&lt;/span&gt; com.lazy.sell;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.junit.Test;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.junit.runner.RunWith;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.slf4j.Logger;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.slf4j.LoggerFactory;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.springframework.boot.test.context.SpringBootTest;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.springframework.test.context.junit4.SpringRunner;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@RunWith&lt;/span&gt;(SpringRunner.class)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@SpringBootTest&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;LoggerTest&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// getLogger 载入当前类名&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; Logger logger = LoggerFactory.getLogger(LoggerTest.class);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;meta&quot;&gt;@Test&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;test1&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        logger.debug(&lt;span class=&quot;string&quot;&gt;&quot;debug...&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        logger.info(&lt;span class=&quot;string&quot;&gt;&quot;info...&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        logger.error(&lt;span class=&quot;string&quot;&gt;&quot;error...&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="SpringBoot学习之旅" scheme="https://lazy-hub.com/categories/SpringBoot%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%97%85/"/>
+    
+    
+      <category term="SpringBoot" scheme="https://lazy-hub.com/tags/SpringBoot/"/>
+    
+      <category term="slf4j" scheme="https://lazy-hub.com/tags/slf4j/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记一次部署bug</title>
+    <link href="https://lazy-hub.com/2019-05-03-Deploy-Bug-About-htaccess.html"/>
+    <id>https://lazy-hub.com/2019-05-03-Deploy-Bug-About-htaccess.html</id>
+    <published>2019-05-03T05:46:35.000Z</published>
+    <updated>2019-06-11T03:03:44.461Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;利用 &lt;code&gt;Capistrano&lt;/code&gt; 把项目成功部署到了测试服上，但是打开域名，出现问题：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You don’t have permission to access / on this server. Server
+        
+      
+    
+    </summary>
+    
+      <category term="运维部署" scheme="https://lazy-hub.com/categories/%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2/"/>
+    
+    
+      <category term="403 Forbidden" scheme="https://lazy-hub.com/tags/403-Forbidden/"/>
+    
+      <category term=".htacess 500错误" scheme="https://lazy-hub.com/tags/htacess-500%E9%94%99%E8%AF%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>初探Composer</title>
+    <link href="https://lazy-hub.com/2019-05-03-Preliminary-study-Ccomposer.html"/>
+    <id>https://lazy-hub.com/2019-05-03-Preliminary-study-Ccomposer.html</id>
+    <published>2019-05-03T05:41:23.000Z</published>
+    <updated>2019-06-11T03:03:44.461Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="运维部署" scheme="https://lazy-hub.com/categories/%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2/"/>
+    
+    
+      <category term="PHP" scheme="https://lazy-hub.com/tags/PHP/"/>
+    
+      <category term="Composer" scheme="https://lazy-hub.com/tags/Composer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>初探Capistrano自动化部署</title>
+    <link href="https://lazy-hub.com/2019-05-03-Preliminary-Exploration-of-Capistrano-Automation.html"/>
+    <id>https://lazy-hub.com/2019-05-03-Preliminary-Exploration-of-Capistrano-Automation.html</id>
+    <published>2019-05-03T05:41:09.000Z</published>
+    <updated>2019-06-11T03:03:44.460Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;p&gt;Capistrano 安装在本地，安装时需要ruby和gem。&lt;/p&gt;
+&lt;figure class=&quot;highlight
+        
+      
+    
+    </summary>
+    
+      <category term="运维部署" scheme="https://lazy-hub.com/categories/%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2/"/>
+    
+    
+      <category term="运维部署" scheme="https://lazy-hub.com/tags/%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2/"/>
+    
+      <category term="自动化部署" scheme="https://lazy-hub.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/"/>
+    
+      <category term="Capistrano" scheme="https://lazy-hub.com/tags/Capistrano/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL字符集的设置utf8</title>
+    <link href="https://lazy-hub.com/2019-05-03-MySQL-character-set-set-utf8.html"/>
+    <id>https://lazy-hub.com/2019-05-03-MySQL-character-set-set-utf8.html</id>
+    <published>2019-05-03T05:33:19.000Z</published>
+    <updated>2019-06-11T03:03:44.456Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;以下内容仅供参考,实际开发中多用utf8mb4&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;MySQL的字符集和校对集有4个级别的默认设置：服务器级、数据库级、表级和字段级。&lt;/p&gt;
+&lt;h2 id=&quot;服务器设置utf8&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="MySQL" scheme="https://lazy-hub.com/categories/MySQL/"/>
+    
+    
+      <category term="MySQL" scheme="https://lazy-hub.com/tags/MySQL/"/>
+    
+      <category term="MySQL开发" scheme="https://lazy-hub.com/tags/MySQL%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vagrant+VirtualBox部署开发环境</title>
+    <link href="https://lazy-hub.com/2017-04-08-vagrant-vbox-deploy-dev-env.html"/>
+    <id>https://lazy-hub.com/2017-04-08-vagrant-vbox-deploy-dev-env.html</id>
+    <published>2017-04-08T02:53:23.000Z</published>
+    <updated>2019-06-11T03:03:44.459Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;VirtualBox 版本 5.1.18&lt;br&gt;Vagrant 版本 1.9.3&lt;br&gt;开发系统：Mac OSX&lt;/p&gt;
+&lt;p&gt;不要被什么 &lt;code&gt;Vagrant&lt;/code&gt; 没听过的名词给吓住了，其实部署很简单，至少比我以前直接在 &lt;code&gt;VirtualBox&lt;/code&gt; 安装 &lt;code&gt;Ubuntu&lt;/code&gt; 轻松多了。&lt;/p&gt;
+&lt;h2 id=&quot;下载所需软件&quot;&gt;&lt;a href=&quot;#下载所需软件&quot; class=&quot;headerlink&quot; title=&quot;下载所需软件&quot;&gt;&lt;/a&gt;下载所需软件&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;下载 &lt;code&gt;VirtualBox&lt;/code&gt; 并安装。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;官网：&lt;a href=&quot;https://www.virtualbox.org/wiki/Downloads&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.virtualbox.org/wiki/Downloads&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;下载 &lt;code&gt;Vagrant&lt;/code&gt; 并安装。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;官网：&lt;a href=&quot;https://www.vagrantup.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.vagrantup.com/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;VirtualBox&lt;/code&gt; 和 &lt;code&gt;Vagrant&lt;/code&gt; 版本需要适配，都用官方最新的即可。直接官方下载，不要去其他莫名其妙的地方下载。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;下载Box&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;下载地址：&lt;a href=&quot;http://www.vagrantbox.es/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.vagrantbox.es/&lt;/a&gt;&lt;br&gt;我使用的是&lt;code&gt;Ubuntu 16.04&lt;/code&gt;，并将其命名为 &lt;code&gt;Ubuntu1604.box&lt;/code&gt;&lt;br&gt;为了方便管理，在家目录下新建文件夹 vagrant/box，将下载的box放入该文件夹内。&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkdir -p ~/vagrant/box&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="运维部署" scheme="https://lazy-hub.com/categories/%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2/"/>
+    
+    
+      <category term="运维部署" scheme="https://lazy-hub.com/tags/%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2/"/>
+    
+      <category term="Vagrant" scheme="https://lazy-hub.com/tags/Vagrant/"/>
+    
+      <category term="VirtualBox" scheme="https://lazy-hub.com/tags/VirtualBox/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu 16.04 编译安装 LNMP 环境</title>
+    <link href="https://lazy-hub.com/2017-04-07-Ubuntu-compile-and-install-LNMP.html"/>
+    <id>https://lazy-hub.com/2017-04-07-Ubuntu-compile-and-install-LNMP.html</id>
+    <published>2017-04-07T10:46:08.000Z</published>
+    <updated>2019-06-11T03:03:44.459Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;个人习惯：源代码包放在 &lt;code&gt;/usr/local/src&lt;/code&gt; 目录下，安装路径在 &lt;code&gt;/usr/local&lt;/code&gt;下&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ubuntu是Vagrant+VirtualBox搭建&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&quot;编译-Nginx&quot;&gt;&lt;a href=&quot;#编译-Nginx&quot; class=&quot;headerlink&quot; title=&quot;编译 Nginx&quot;&gt;&lt;/a&gt;编译 Nginx&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;下载 Nginx 源码包，我选择的是 1.10.3 稳定版&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt;目录 /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/src&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; wget http://nginx.org/download/nginx-1.10.3.tar.gz&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;解压源码包&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt;目录 /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/src&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; tar vfzx nginx-1.10.3.tar.gz&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;配置安装路径&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt;目录 /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/src/nginx-1.10.3/&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; ./configure --prefix=usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/nginx&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;此时编译报错：没有 C 编译器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;./configure: error: C compiler cc is not found&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ sudo apt-get install build-essential&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;再次配置安装路径，报错：缺少 PCRE 库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;./configure: error: the HTTP rewrite module requires the PCRE library.&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="运维部署" scheme="https://lazy-hub.com/categories/%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2/"/>
+    
+    
+      <category term="运维部署" scheme="https://lazy-hub.com/tags/%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2/"/>
+    
+      <category term="LNMP" scheme="https://lazy-hub.com/tags/LNMP/"/>
+    
+      <category term="编译安装" scheme="https://lazy-hub.com/tags/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL索引设计原则</title>
+    <link href="https://lazy-hub.com/2017-03-29-MySQL-index-design-principles.html"/>
+    <id>https://lazy-hub.com/2017-03-29-MySQL-index-design-principles.html</id>
+    <published>2017-03-29T09:50:47.000Z</published>
+    <updated>2019-06-11T03:03:44.457Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;索引是数据库中用来提高性能的最常用的工具,对相关列使用索引是提高&lt;code&gt;SELECT&lt;/code&gt; 操作性能的最佳途径.&lt;/p&gt;
+&lt;h2 id=&quot;创建与删除索引&quot;&gt;&lt;a href=&quot;#创建与删除索引&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="MySQL" scheme="https://lazy-hub.com/categories/MySQL/"/>
+    
+    
+      <category term="MySQL" scheme="https://lazy-hub.com/tags/MySQL/"/>
+    
+      <category term="MySQL索引" scheme="https://lazy-hub.com/tags/MySQL%E7%B4%A2%E5%BC%95/"/>
+    
+      <category term="MySQL性能优化" scheme="https://lazy-hub.com/tags/MySQL%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SSH密钥对认证实现SSH免密登录</title>
+    <link href="https://lazy-hub.com/2017-03-15-SSH-key-pair-authentication.html"/>
+    <id>https://lazy-hub.com/2017-03-15-SSH-key-pair-authentication.html</id>
+    <published>2017-03-15T09:40:11.000Z</published>
+    <updated>2019-06-11T03:03:44.458Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;普通SSH登录方式&quot;&gt;&lt;a href=&quot;#普通SSH登录方式&quot; class=&quot;headerlink&quot; title=&quot;普通SSH登录方式&quot;&gt;&lt;/a&gt;普通SSH登录方式&lt;/h2&gt;&lt;p&gt;一般非根用户登录服务器：&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ssh zhangsan@120.31.29.101&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;然后输入相对应的用户密码登录即可。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;缺点：&lt;/strong&gt; 不安全，极易受到暴力攻击&lt;/p&gt;
+&lt;h2 id=&quot;SSH密钥对认证方式登录&quot;&gt;&lt;a href=&quot;#SSH密钥对认证方式登录&quot; class=&quot;headerlink&quot; title=&quot;SSH密钥对认证方式登录&quot;&gt;&lt;/a&gt;SSH密钥对认证方式登录&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;在本机创建密钥对&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ssh-keygen&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="Linux/Mac" scheme="https://lazy-hub.com/categories/Linux-Mac/"/>
+    
+    
+      <category term="SSH" scheme="https://lazy-hub.com/tags/SSH/"/>
+    
+      <category term="运维部署" scheme="https://lazy-hub.com/tags/%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2/"/>
+    
+      <category term="SSH登录" scheme="https://lazy-hub.com/tags/SSH%E7%99%BB%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>高性能网站建设指南</title>
+    <link href="https://lazy-hub.com/2017-03-01-High-performance-website-construction-guide.html"/>
+    <id>https://lazy-hub.com/2017-03-01-High-performance-website-construction-guide.html</id>
+    <published>2017-03-01T08:13:41.000Z</published>
+    <updated>2019-06-11T03:03:44.462Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;减少HTTP请求&quot;&gt;&lt;a href=&quot;#减少HTTP请求&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="性能优化" scheme="https://lazy-hub.com/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+    
+      <category term="Web开发" scheme="https://lazy-hub.com/tags/Web%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="性能优化" scheme="https://lazy-hub.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PHP手册阅读笔记(三)</title>
+    <link href="https://lazy-hub.com/2017-02-17-PHP-Manual-reading-notes-3.html"/>
+    <id>https://lazy-hub.com/2017-02-17-PHP-Manual-reading-notes-3.html</id>
+    <published>2017-02-17T03:18:33.000Z</published>
+    <updated>2019-06-11T03:03:44.457Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;递增递减&quot;&gt;&lt;a href=&quot;#递增递减&quot; class=&quot;headerlink&quot; title=&quot;递增递减&quot;&gt;&lt;/a&gt;递增递减&lt;/h2&gt;&lt;p&gt;每次碰见形如 &lt;code&gt;$a++&lt;/code&gt; 或
+        
+      
+    
+    </summary>
+    
+      <category term="PHP" scheme="https://lazy-hub.com/categories/PHP/"/>
+    
+    
+      <category term="PHP" scheme="https://lazy-hub.com/tags/PHP/"/>
+    
+      <category term="PHP手册" scheme="https://lazy-hub.com/tags/PHP%E6%89%8B%E5%86%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PHP手册阅读笔记(二)</title>
+    <link href="https://lazy-hub.com/2017-01-18-PHP-Manual-reading-notes-2.html"/>
+    <id>https://lazy-hub.com/2017-01-18-PHP-Manual-reading-notes-2.html</id>
+    <published>2017-01-18T06:50:12.000Z</published>
+    <updated>2019-06-11T03:03:44.458Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;布尔FALSE&quot;&gt;&lt;a href=&quot;#布尔FALSE&quot; class=&quot;headerlink&quot; title=&quot;布尔FALSE&quot;&gt;&lt;/a&gt;布尔FALSE&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;布尔值 FALSE 本身&lt;/li&gt;
+&lt;li&gt;整型值
+        
+      
+    
+    </summary>
+    
+      <category term="PHP" scheme="https://lazy-hub.com/categories/PHP/"/>
+    
+    
+      <category term="PHP" scheme="https://lazy-hub.com/tags/PHP/"/>
+    
+      <category term="PHP手册" scheme="https://lazy-hub.com/tags/PHP%E6%89%8B%E5%86%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PHP手册阅读笔记(一)</title>
+    <link href="https://lazy-hub.com/2016-12-27-PHP-Manual-reading-notes-1.html"/>
+    <id>https://lazy-hub.com/2016-12-27-PHP-Manual-reading-notes-1.html</id>
+    <published>2016-12-27T11:30:41.000Z</published>
+    <updated>2019-06-11T03:03:44.457Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;PHP短标签&quot;&gt;&lt;a href=&quot;#PHP短标签&quot; class=&quot;headerlink&quot; title=&quot;PHP短标签&quot;&gt;&lt;/a&gt;PHP短标签&lt;/h2&gt;&lt;p&gt;不鼓励使用短标签&lt;/p&gt;
+&lt;h2 id=&quot;结束标签&quot;&gt;&lt;a href=&quot;#结束标签&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="PHP" scheme="https://lazy-hub.com/categories/PHP/"/>
+    
+    
+      <category term="PHP" scheme="https://lazy-hub.com/tags/PHP/"/>
+    
+      <category term="PHP手册" scheme="https://lazy-hub.com/tags/PHP%E6%89%8B%E5%86%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL常用引擎比较</title>
+    <link href="https://lazy-hub.com/2016-12-23-MySQL-commonly-used-engine-comparison.html"/>
+    <id>https://lazy-hub.com/2016-12-23-MySQL-commonly-used-engine-comparison.html</id>
+    <published>2016-12-23T04:58:27.000Z</published>
+    <updated>2019-06-11T03:03:44.456Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;一表胜千言😂&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;特点&lt;/th&gt;
+&lt;th&gt;MyISAM&lt;/th&gt;
+&lt;th&gt;InnoDB&lt;/th&gt;
+&lt;th&gt;MEMORY&lt;/th&gt;
+&lt;th&gt;MERGE&lt;/th&gt;
+&lt;th&gt;NDB&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;
+        
+      
+    
+    </summary>
+    
+      <category term="MySQL" scheme="https://lazy-hub.com/categories/MySQL/"/>
+    
+    
+      <category term="MySQL" scheme="https://lazy-hub.com/tags/MySQL/"/>
+    
+      <category term="MySQL引擎" scheme="https://lazy-hub.com/tags/MySQL%E5%BC%95%E6%93%8E/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>替换Homebrew国内镜像源</title>
+    <link href="https://lazy-hub.com/2016-12-23-Replace-Homebrew-domestic-mirror-source.html"/>
+    <id>https://lazy-hub.com/2016-12-23-Replace-Homebrew-domestic-mirror-source.html</id>
+    <published>2016-12-23T03:52:54.000Z</published>
+    <updated>2019-06-11T03:03:44.461Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;原文出处: &lt;a href=&quot;http://www.cnblogs.com/phpdragon/p/5637954.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;phpdragon-博客园&lt;/a&gt;&lt;br&gt;我的配置和原文略有出入&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;安装与卸载&quot;&gt;&lt;a href=&quot;#安装与卸载&quot; class=&quot;headerlink&quot; title=&quot;安装与卸载&quot;&gt;&lt;/a&gt;安装与卸载&lt;/h2&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo rm -rf /usr/local/&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="Linux/Mac" scheme="https://lazy-hub.com/categories/Linux-Mac/"/>
+    
+    
+      <category term="Mac" scheme="https://lazy-hub.com/tags/Mac/"/>
+    
+      <category term="Homebrew" scheme="https://lazy-hub.com/tags/Homebrew/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL基础之字符型</title>
+    <link href="https://lazy-hub.com/2016-12-09-MySQL-based-on-the-character-type.html"/>
+    <id>https://lazy-hub.com/2016-12-09-MySQL-based-on-the-character-type.html</id>
+    <published>2016-12-09T02:54:07.000Z</published>
+    <updated>2019-06-11T03:03:44.455Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;2016年12月31日16:01:24更新 来自&lt;a href=&quot;https://book.douban.com/subject/25817684/&quot; target=&quot;_blank&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="MySQL" scheme="https://lazy-hub.com/categories/MySQL/"/>
+    
+    
+      <category term="MySQL" scheme="https://lazy-hub.com/tags/MySQL/"/>
+    
+      <category term="MySQL基础" scheme="https://lazy-hub.com/tags/MySQL%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+</feed>

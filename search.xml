@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Laravel 5.7 新特性之邮箱验证]]></title>
+    <url>%2F2019-06-11-Laravel_5_7_Email_Verification.html</url>
+    <content type="text"><![CDATA[创建一个 Laravel 项目 1laravel new knowledge 修改配置 形如： 12345678DB_CONNECTION=mysqlDB_HOST=127.0.0.1DB_PORT=3306DB_DATABASE=knowledgeDB_USERNAME=rootDB_PASSWORD=MAIL_DRIVER=log #log驱动仅为开发便利 3秒搭建用户认证 12php artisan make:authphp artisan migrate Laravel 5.7 在默认用户表中新增了 email_verified_at 字段 在 User 模型文件中实现 MustVerifyEmail 接口 1234class User extends Authenticatable implements MustVerifyEmail &#123; ...&#125; 路由web.php文件中配置邮箱验证 1Auth::routes(['verify' =&gt; true]); 利用 verified 中间件，使其用户必须邮箱验证 1234# 具体设置根据实际开发Route::get('/', function () &#123; return view('welcome');&#125;)-&gt;middleware('verified'); 注册用户后，在 log 日志中找到对应邮件，点击验证链接验证邮箱]]></content>
+      <categories>
+        <category>Laravel 5.7 新特性</category>
+      </categories>
+      <tags>
+        <tag>Laravel</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[从零开始Go之常量定义]]></title>
+    <url>%2F2019-06-08-Go_From_Scratch_3.html</url>
+    <content type="text"><![CDATA[Go 语言中的常量不要大写，在Go语言中，首字母大小写是有含义的 普通常量定义 单个常量定义 1const logname string = "errorlog" 等同于： 1const logname = "errorlog" 多个常量赋值 1const a,b,c = "hello", false, 2 括号表示法 1234const ( log = "error.log" a, b = false, 1) 枚举类型定义12345678910111213package mainimport ( "fmt")func main() &#123; const ( up = 1 down = 0 ) fmt.Println(up, down)&#125; 输出结果： 11 0 iota 自增值1234567891011121314package mainimport ( "fmt")func main() &#123; const ( unknown = iota male female ) fmt.Println(unknown, male, female)&#125; 输出结果： 10 1 2 巧用 iota 之过滤]]></content>
+      <categories>
+        <category>从零开始Go</category>
+      </categories>
+      <tags>
+        <tag>从零开始Go</tag>
+        <tag>Go</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[从零开始Go之变量类型与类型转换]]></title>
+    <url>%2F2019-06-08-Go_From_Scratch_2.html</url>
+    <content type="text"><![CDATA[内置变量类型 类别 类型与描述 整型 uint8 无符号 8 位整型 (0 到 255) 整型 uint16 无符号 16 位整型 (0 到 65535) 整型 uint32 无符号 32 位整型 (0 到 4294967295) 整型 uint64 无符号 64 位整型 (0 到 18446744073709551615) 整型 int8 有符号 8 位整型 (-128 到 127) 整型 int16 有符号 16 位整型 (-32768 到 32767) 整型 int32 有符号 32 位整型 (-2147483648 到 2147483647) 整型 int64 有符号 64 位整型 (-9223372036854775808 到 9223372036854775807) 整型 byte 类似 uint8 整型 rune 类似 int32 是支持utf8的char类型 整型 uint 32 或 64 位 整型 int与 uint 一样大小 整型 uintptr 无符号整型，用于存放一个指针 浮点 float32IEEE-754 32位浮点型数 浮点 float64IEEE-754 64位浮点型数 浮点 complex6432 位实数和虚数 浮点 complex12864 位实数和虚数 布尔 bool true 或 false 字符串 string 类型转换Go没有隐式转换，只能强制转换 12345678910111213package mainimport ( "fmt" "math")func main() &#123; var a, b int = 3, 4 var c int c = int(math.Sqrt( float64(a * a + b * b))) fmt.Println(c)&#125; 输出结果： 15]]></content>
+      <categories>
+        <category>从零开始Go</category>
+      </categories>
+      <tags>
+        <tag>从零开始Go</tag>
+        <tag>Go</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[从零开始Go之变量定义]]></title>
+    <url>%2F2019-06-08-Go_From_Scratch_1.html</url>
+    <content type="text"><![CDATA[Golang 在定义变量时，与大多数主流语言不同，先定义变量名，再定义变量类型。 变量默认初始值Go语言定义变量后都有一个合理的初始值 123456789package mainimport "fmt"func main() &#123; var a int var s string fmt.Printf("%d %q\n",a, s)&#125; 输出结果： 10 &quot;&quot; 变量赋初始值123456789package mainimport "fmt"func main() &#123; var a, b int = 1, 2 //定义多个变量并赋值 var s string = "你好呀" fmt.Println(a, b, s)&#125; 输出结果： 11 2 你好呀 变量省略类型定义直接赋值12345678package mainimport "fmt"func main() &#123; var a, b, c, s = 1, 2, true, "hello" //类型没定义,可以多个类型写在一起 fmt.Println(a, b, c, s)&#125; 输出结果： 11 2 true hello 函数内变量赋值最佳实践1234567891011121314package mainimport "fmt"func varSimple() &#123; //注：包内无法使用 := a, b, c, s := 1, 2, true, "hello" b = 3 // 定义后再赋值不能再用 := fmt.Println(a, b, c, s)&#125;func main() &#123; varSimple()&#125; 输出结果： 11 3 true hello 包内部变量定义Go 没有全局变量的概念 12345package mainvar a = 1var s = "hello"var b = true 包内部变量定义最佳实践1234567package mainvar ( a = 1 s = "hello" b = true)]]></content>
+      <categories>
+        <category>从零开始Go</category>
+      </categories>
+      <tags>
+        <tag>从零开始Go</tag>
+        <tag>Go</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[SpringBoot学习之日志的使用与配置]]></title>
+    <url>%2F2019-06-01-SpringBoot-Log.html</url>
+    <content type="text"><![CDATA[基本使用利用 SpringBoot 内置的 slf4j 最基础的使用: 1234567891011121314151617181920212223package com.lazy.sell;import org.junit.Test;import org.junit.runner.RunWith;import org.slf4j.Logger;import org.slf4j.LoggerFactory;import org.springframework.boot.test.context.SpringBootTest;import org.springframework.test.context.junit4.SpringRunner;@RunWith(SpringRunner.class)@SpringBootTestpublic class LoggerTest &#123; // getLogger 载入当前类名 private final Logger logger = LoggerFactory.getLogger(LoggerTest.class); @Test public void test1() &#123; logger.debug("debug..."); logger.info("info..."); logger.error("error..."); &#125;&#125; 利用 lombok 更加优雅的使用日志 1234567891011121314151617181920package com.lazy.sell;import lombok.extern.slf4j.Slf4j;import org.junit.Test;import org.junit.runner.RunWith;import org.springframework.boot.test.context.SpringBootTest;import org.springframework.test.context.junit4.SpringRunner;@RunWith(SpringRunner.class)@SpringBootTest@Slf4jpublic class LoggerTest &#123; @Test public void test1() &#123; log.debug("debug..."); log.info("info..."); log.error("error..."); &#125;&#125; 日志注入变量(用 {} 表示占位符) 123456789101112131415161718192021package com.lazy.sell;import lombok.extern.slf4j.Slf4j;import org.junit.Test;import org.junit.runner.RunWith;import org.springframework.boot.test.context.SpringBootTest;import org.springframework.test.context.junit4.SpringRunner;@RunWith(SpringRunner.class)@SpringBootTest@Slf4jpublic class LoggerTest &#123; @Test public void test1() &#123; String name = "hello"; String password = "123456"; log.info("name: &#123;&#125;, password: &#123;&#125;", name, password); &#125;&#125; Logback配置 简单配置 resources/application.yml 12345logging: pattern: console: "%d - %msg%n" # 控制台输出日志格式 file: ./sell.log # 输出的日志文件地址 level: debug # 日志级别(默认info) 复杂配置 每天分别创建 info 日志和 error 日志 删除 application.yml 中的 logging 相关配置 resources/logback-spring.xml 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455&lt;?xml version="1.0" encoding="UTF-8" ?&gt;&lt;configuration&gt; &lt;!-- 配置控制台 --&gt; &lt;appender name="consoleLog" class="ch.qos.logback.core.ConsoleAppender"&gt; &lt;layout class="ch.qos.logback.classic.PatternLayout"&gt; &lt;pattern&gt; %d - %msg%n &lt;/pattern&gt; &lt;/layout&gt; &lt;/appender&gt; &lt;!-- 配置文件 --&gt; &lt;appender name="fileInfoLog" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt; &lt;filter class="ch.qos.logback.classic.filter.LevelFilter"&gt; &lt;level&gt;ERROR&lt;/level&gt; &lt;onMatch&gt;DENY&lt;/onMatch&gt; &lt;onMismatch&gt;ACCEPT&lt;/onMismatch&gt; &lt;/filter&gt; &lt;encoder&gt; &lt;pattern&gt; %msg%n &lt;/pattern&gt; &lt;/encoder&gt; &lt;!-- 滚动策略 --&gt; &lt;rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"&gt; &lt;!-- 路径 --&gt; &lt;fileNamePattern&gt;./info.%d.log&lt;/fileNamePattern&gt; &lt;/rollingPolicy&gt; &lt;/appender&gt; &lt;appender name="fileErrorLog" class="ch.qos.logback.core.rolling.RollingFileAppender"&gt; &lt;!-- 根据范围来过滤 --&gt; &lt;filter class="ch.qos.logback.classic.filter.ThresholdFilter"&gt; &lt;level&gt;ERROR&lt;/level&gt; &lt;/filter&gt; &lt;encoder&gt; &lt;pattern&gt; %msg%n &lt;/pattern&gt; &lt;/encoder&gt; &lt;!-- 滚动策略 --&gt; &lt;rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy"&gt; &lt;!-- 路径 --&gt; &lt;fileNamePattern&gt;./error.%d.log&lt;/fileNamePattern&gt; &lt;/rollingPolicy&gt; &lt;/appender&gt; &lt;!-- 配置应用至整个项目 --&gt; &lt;root level="info"&gt; &lt;appender-ref ref="consoleLog" /&gt; &lt;appender-ref ref="fileInfoLog" /&gt; &lt;appender-ref ref="fileErrorLog" /&gt; &lt;/root&gt;&lt;/configuration&gt;]]></content>
+      <categories>
+        <category>SpringBoot学习之旅</category>
+      </categories>
+      <tags>
+        <tag>SpringBoot</tag>
+        <tag>slf4j</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[记一次部署bug]]></title>
+    <url>%2F2019-05-03-Deploy-Bug-About-htaccess.html</url>
+    <content type="text"><![CDATA[利用 Capistrano 把项目成功部署到了测试服上，但是打开域名，出现问题： You don’t have permission to access / on this server. Server unable to read htaccess file, denying access to be safe 感谢万能的 Stackoverflow ， forbidden-you-dont-have-permission-to-access-on-this-server-server-unable-to 原因：deploy 目录，权限没有给足够。我给web目录755权限，但是web目录的父级目录或父父级目录 apache 没有可访问的权限，就导致了问题发生 修改了权限之后，又出现 500 内部错误，报错类似： without matching 后来机智一瞄，发现是小伙伴写的.htaccess编码有问题。encoding utf8 with bom。。。。。 把 .htaccess 改成 UTF8 就可以了。]]></content>
+      <categories>
+        <category>运维部署</category>
+      </categories>
+      <tags>
+        <tag>403 Forbidden</tag>
+        <tag>.htacess 500错误</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[初探Composer]]></title>
+    <url>%2F2019-05-03-Preliminary-study-Ccomposer.html</url>
+    <content type="text"><![CDATA[安装12wget https://dl.laravel-china.org/composer.phar -O /usr/local/bin/composerchmod a+x /usr/local/bin/composer 替换国内镜像1composer config -g repo.packagist composer https://packagist.laravel-china.org 基本命令installinstall 命令从当前目录读取 composer.json 文件，处理了依赖关系，并把其安装到 vendor 目录下。 1composer install 如果当前目录下存在 composer.lock 文件，它会从此文件读取依赖版本，而不是根据 composer.json 文件去获取依赖。这确保了该库的每个使用者都能得到相同的依赖版本。 如果没有 composer.lock 文件，composer 将在处理完依赖关系后创建它。 update获取依赖的最新版本，并且升级 composer.lock 文件 1composer update requirerequire 命令增加新的依赖包到当前目录的 composer.json 文件中 1composer require 依赖包 创建项目1composer create-project 依赖包名 放入的文件夹 依赖版本 搜索依赖1composer search 依赖包名 自我更新将Composer升级到最新版本 1composer self-update 参考网址：Composer 中文网]]></content>
+      <categories>
+        <category>运维部署</category>
+      </categories>
+      <tags>
+        <tag>PHP</tag>
+        <tag>Composer</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[初探Capistrano自动化部署]]></title>
+    <url>%2F2019-05-03-Preliminary-Exploration-of-Capistrano-Automation.html</url>
+    <content type="text"><![CDATA[安装Capistrano 安装在本地，安装时需要ruby和gem。 1gem install capistrano 配置初始化项目请在项目最顶层目录下执行： 1cap install 此时会生成一个 Capfile 的文件，config 目录和 lib 目录。 123456789Capfileconfig/ deploy/ production.rb staging.rb deploy.rblib/ capistrano/ tasks/ 文件说明Capfile 是Capsitrano的中央配置文件，会聚合 config/ 目录中的配置文件。 config/ 目录存放各个远程服务器环境（测试环境、过渡环境、生产环境等）的配置文件。 config/deploy.rb 用于保存所有环境的通用配置 config/deploy.rb文件说明 1234567891011# PHP应用名称 只能数字、字母和下划线set :application, "my_app_name"# git 仓库地址set :repo_url, "git@example.com:me/my_repo.git"# 远程服务器中一个目录的绝对地址set :deploy_to, "/home/www/apps/my_app_name"# 保留多少个旧版本，以防想把应用回滚到之前的版本set :keep_releases, 5 准备远程服务器比如有个www用户专门部署网站。我们在 /home/www/apps/ 中创建 my_app_name 文件夹放置网站代码文件。在生产服务器中，Capistrano 管理的目录结构可能如下所示： 12345678910111213# 目录结构/ home/ www/ apps/ my_app_name/ current/ releases/ release1/ release2/ release3/ release4/ release5/ 虚拟主机Capistrano 会创建符号链接，把 my_app_name 文件夹里的 current/ 目录。因此，我们要将虚拟主机的根目录指向 Capistrano 的 current/ 目录。 服务器依赖远程服务器不需要安装 Capistrano，但是需要 Git。 共享目录以CI框架为例，Session、Cache、Log、Uploads等目录文件不会被Git进行版本控制，所以每一次部署的时候，这几个文件夹或文件都回被删除或者清空。这时候就需要用Cap的文件链接的功能，将这些文件或文件夹链接到共享目录中去，这样每次部署这些文件和文件夹就不会消失了。 12# deploy.rb 文件中添加如下的内容即可，不同的项目应该要作相应的改动append :linked_dirs, "application/session", "application/logs", "application/cache", "uploads" Composer如果项目中运用到了Composer进行包管理，那么项目的vendor目录也不应该版本控制，所以在每次部署完毕后需要进行Composer Install操作，前提是服务器上也配置好了Composer环境。如果发现在Composer Install操作的时候用时很长，那么请配置好Composer的国内镜像。在config/deploy目录中的配置文件中添加如下内容即可： 12345678910namespace :deploy do desc "Composer Install" after :updated, :build do on roles(:web) do within release_path do execute :composer, "install --quiet" end end endend 参考《Modern PHP（中文版）》]]></content>
+      <categories>
+        <category>运维部署</category>
+      </categories>
+      <tags>
+        <tag>运维部署</tag>
+        <tag>自动化部署</tag>
+        <tag>Capistrano</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MySQL字符集的设置utf8]]></title>
+    <url>%2F2019-05-03-MySQL-character-set-set-utf8.html</url>
+    <content type="text"><![CDATA[以下内容仅供参考,实际开发中多用utf8mb4 MySQL的字符集和校对集有4个级别的默认设置：服务器级、数据库级、表级和字段级。 服务器设置utf8在my.cnf中设置 12[mysqld]character-set-server=utf8 交互客户机和服务器设置utf8在my.cnf中设置： 12[mysql]default-character-set=utf8 遇见乱码怎么办?请确保客户端,服务器,客户端与服务器互动连接这三者的编码都一致.]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>MySQL开发</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Vagrant+VirtualBox部署开发环境]]></title>
+    <url>%2F2017-04-08-vagrant-vbox-deploy-dev-env.html</url>
+    <content type="text"><![CDATA[VirtualBox 版本 5.1.18Vagrant 版本 1.9.3开发系统：Mac OSX 不要被什么 Vagrant 没听过的名词给吓住了，其实部署很简单，至少比我以前直接在 VirtualBox 安装 Ubuntu 轻松多了。 下载所需软件 下载 VirtualBox 并安装。 官网：https://www.virtualbox.org/wiki/Downloads 下载 Vagrant 并安装。 官网：https://www.vagrantup.com/ VirtualBox 和 Vagrant 版本需要适配，都用官方最新的即可。直接官方下载，不要去其他莫名其妙的地方下载。 下载Box 下载地址：http://www.vagrantbox.es/我使用的是Ubuntu 16.04，并将其命名为 Ubuntu1604.box为了方便管理，在家目录下新建文件夹 vagrant/box，将下载的box放入该文件夹内。 1mkdir -p ~/vagrant/box Vagrant环境设置 添加 Box 到 Vagrant 1vagrant box add dev Ubuntu1604.box 部署一个名叫 lnmp 的开发环境，并初始化 123cd ~/vagrantmkdir dev &amp;&amp; cd devvagrant init ubuntu1604 启动 dev，并进入 12vagrant upvagrant ssh 其他 Vagrant 常用命令 12345678vagrant box add boxName box地址 # 添加boxvagrant init [name [url]] # 初始化Vagrant环境vagrant ssh # 启动 Vagrantvagrant halt # 关闭 Vagrantvagrant suspend # 挂起 Vagrant 不用时推荐使用该命令vagrant resume # 重启被挂起的 Vagrantvagrant destroy [name|id] # 销毁 Vagrantvagrant reload # 不用重启加载配置文件 具体命令见官网 https://www.vagrantup.com/docs/cli 我的 Vagrantfile 配置 具体见官网 https://www.vagrantup.com/docs/vagrantfile/machine_settings.html 总结以上只是记录了个入门，我也是刚接触Vagrant，更高阶的在日后的工作学习中慢慢探索即可。PS：遇见新技术名词无需惊慌，多多google，多看官方文档即可。]]></content>
+      <categories>
+        <category>运维部署</category>
+      </categories>
+      <tags>
+        <tag>运维部署</tag>
+        <tag>Vagrant</tag>
+        <tag>VirtualBox</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Ubuntu 16.04 编译安装 LNMP 环境]]></title>
+    <url>%2F2017-04-07-Ubuntu-compile-and-install-LNMP.html</url>
+    <content type="text"><![CDATA[个人习惯：源代码包放在 /usr/local/src 目录下，安装路径在 /usr/local下 Ubuntu是Vagrant+VirtualBox搭建 编译 Nginx 下载 Nginx 源码包，我选择的是 1.10.3 稳定版 12#目录 /usr/local/src$ wget http://nginx.org/download/nginx-1.10.3.tar.gz 解压源码包 12#目录 /usr/local/src$ tar vfzx nginx-1.10.3.tar.gz 配置安装路径 12#目录 /usr/local/src/nginx-1.10.3/$ ./configure --prefix=usr/local/nginx 此时编译报错：没有 C 编译器 ./configure: error: C compiler cc is not found 1$ sudo apt-get install build-essential 再次配置安装路径，报错：缺少 PCRE 库 ./configure: error: the HTTP rewrite module requires the PCRE library. 下载 pcre 库源码并解压 123#目录 /usr/local/src/$ wget https://ftp.pcre.org/pub/pcre/pcre-8.40.tar.gz$ tar vfxz pcre-8.40.tar.gz 再次配置安装路径 123#目录 /usr/local/src/nginx-1.10.3/$ ./configure --prefix=/usr/local/nginx --with-pcre=/usr/local/src/pcre-8.40 报错：缺少 zlib 库./configure: error: the HTTP gzip module requires the zlib library. 如上方法，下载 zlib 源码并解压 123#目录 /usr/local/src/$ wget http://www.zlib.net/zlib-1.2.11.tar.gz$ tar vfzx zlib-1.2.11.tar.gz 再次配置安装路径 1234#目录 /usr/local/src/nginx-1.10.3/$ ./configure --prefix=/usr/local/nginx \--with-pcre=/usr/local/src/pcre-8.40 \--with-zlib=/usr/local/src/zlib-1.2.11 此时成功了 o(￣▽￣)d 别忘了最后一步 1make &amp;&amp; make install 启动 nginx 1$ /user/local/nginx/sbin/nginx 我设置的该本地服务器的 IP 为 192.168.33.250 nginx 启动后，在chrome查看80端口，出现该页面，说明我已经成功安装nginx了o(￣▽￣)d 编译PHP 下载源码包，我选择的是最新稳定版 7.1.4 123# 目录 /usr/local/src/$ wget http://cn2.php.net/get/php-7.1.4.tar.gz/from/this/mirror$ mv mirror php-7.1.4.tar.gz 解压源码包 12# 目录 /usr/local/src/$ tar vfxz php-7.1.4.tar.gz 配置安装路径 12345678910# 目录 /usr/local/src/php-7.1.4$ ./configure --prefix=/usr/local/php \&gt; --with-gd \&gt; --enable-gd-native-ttf \&gt; --enable-gd-jis-conv \&gt; --enable-mysqlnd \&gt; --with-pdo-mysql=mysqlnd \&gt; --with-openssl \&gt; --enable-mbstring \&gt; --enable-fpm 报错：缺少xml2-config，需要安装libxml2 configure: error: xml2-config not found. Please check your libxml2 installation. 12# 安装libxml2和libxml2-dev$ apt-get install libxml2 libxml2-dev 继续配置安装路径，报错：缺少openssl configure: error: Cannot find OpenSSL’s &lt;evp.h&gt; 12# 安装openssl和libssl-dev Ubuntu上没有openssl-develb包$ apt-get install openssl libssl-dev 继续配置安装路径，报错： configure: error: Cannot find OpenSSL’s libraries 解决方案：http://stackoverflow.com/questions/39919283/configure-error-cannot-find-openssls-libraries-ubuntu-16-04 1$ apt-get install pkg-config libssl-dev openssl 继续配置安装路径，缺少gd库，但是我找了下，并没有php7.1-gd这个库，退而且其次，安装了jpeg和png的库 configure: error: png.h not found. 1$ apt-get install libjpeg-dev libpng-dev 继续配置安装路径，这一次终于成功了😄 编译PHP 12# 目录 /usr/local/src/php-7.1.4$ make &amp;&amp; make install 几个PHP相关的配置文件 1234# 目录 /usr/local/php$ cp etc/php-fpm.conf.default etc/php-fpm.conf# 目录 /usr/local/src/php-7.1.4$ cp php.ini-development /usr/local/php/etc/php.ini Nginx和PHP整合 修改 Nginx 配置文件 12345678# 位置 /usr/local/nginx/conf/nginx.conflocation ~ \.php$ &#123; root /var/wwwroot/test.com/; fastcgi_pass 127.0.0.1:9000; fastcgi_index index.php; fastcgi_param SCRIPT_FILENAME $DOCUMENT_ROOT$fastcgi_script_name; include fastcgi_params;&#125; 配置文件里这些都给你写了，其实只要把注释去掉即可。 然后优雅的重启下Nginx 和 php-fpm 1234# 目录 /usr/local/nginx$ ./sbin/nginx -s reload# 目录 /usr/local/php$ ./sbin/php-fpm 报错：WARNING: Nothing matches the include pattern ‘/usr/local/php/etc/php-fpm.d/*.conf’ from /usr/local/php/etc/php-fpm.conf at line 125. 很简单，在/usr/local/php/etc/php-fpm.d/ 目录下，把 www.conf.default 重命名或复制份，以 conf 为后缀即可 然后再启动php-fpm。 ok~ 编译MySQL 新增mysql 用户组和用户 12groupadd mysqluseradd -g mysql mysql 下载源码 12# 目录 /usr/local/src/$ wget http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.10.tar.gz 安装说明文档 https://dev.mysql.com/doc/refman/5.7/en/installing-source-distribution.html 123456789101112131415161718192021222324# Preconfiguration setupshell&gt; groupadd mysqlshell&gt; useradd -r -g mysql -s /bin/false mysql# Beginning of source-build specific instructionsshell&gt; tar zxvf mysql-VERSION.tar.gzshell&gt; cd mysql-VERSIONshell&gt; mkdir bldshell&gt; cd bldshell&gt; cmake ..shell&gt; makeshell&gt; make install# End of source-build specific instructions# Postinstallation setupshell&gt; cd /usr/local/mysqlshell&gt; chown -R mysql .shell&gt; chgrp -R mysql .shell&gt; bin/mysql_install_db --user=mysql # Before MySQL 5.7.6shell&gt; bin/mysqld --initialize --user=mysql # MySQL 5.7.6 and upshell&gt; bin/mysql_ssl_rsa_setup # MySQL 5.7.6 and upshell&gt; chown -R root .shell&gt; chown -R mysql datashell&gt; bin/mysqld_safe --user=mysql &amp;# Next command is optionalshell&gt; cp support-files/mysql.server /etc/init.d/mysql.server 1cmake -DCMAKE_INSTALL_PREFIX=/usr/local/mysql -DMYSQL_DATADIR=/usr/local/mysql/data -DDEFAULT_CHARSET=utf8mb4 -DDEFAULT_COLLATION=utf8_general_ci -DMYSQL_TCP_PORT=3306 -DMYSQL_USER=mysql -DWITH_MYISAM_STORAGE_ENGINE=1 -DWITH_INNOBASE_STORAGE_ENGINE=1 -DWITH_ARCHIVE_STORAGE_ENGINE=1 -DWITH_BLACKHOLE_STORAGE_ENGINE=1 -DWITH_MEMORY_STORAGE_ENGINE=1 -DDOWNLOAD_BOOST=1 -DWITH_BOOST=/usr/local/boost]]></content>
+      <categories>
+        <category>运维部署</category>
+      </categories>
+      <tags>
+        <tag>运维部署</tag>
+        <tag>LNMP</tag>
+        <tag>编译安装</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MySQL索引设计原则]]></title>
+    <url>%2F2017-03-29-MySQL-index-design-principles.html</url>
+    <content type="text"><![CDATA[索引是数据库中用来提高性能的最常用的工具,对相关列使用索引是提高SELECT 操作性能的最佳途径. 创建与删除索引1CREATE [UNIQUE|FULLTEXT|SPATOAL] INDEX 索引名 1DROP INDEX 索引名 ON 表名 设计原则 搜索的索引列，最适合做索引的列是 WHERE 子句中的列，或连接子句中指定的列。 使用唯一索引。索引列的基数越大，效果越好。比如性别列，只有男、女，没什么意义。相对而言，出生日期列用唯一索引就好的多。 使用短索引。对字符串进行索引，应该指定一个前缀长度。比如CHAR(200)的列，如果在前10个或20个字符内，多数数值唯一，那么可使用短索引。 利用最左前缀。 不要过度索引。索引会占用额外的磁盘空间，降低写操作的性能。]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>MySQL索引</tag>
+        <tag>MySQL性能优化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[SSH密钥对认证实现SSH免密登录]]></title>
+    <url>%2F2017-03-15-SSH-key-pair-authentication.html</url>
+    <content type="text"><![CDATA[普通SSH登录方式一般非根用户登录服务器： 1ssh zhangsan@120.31.29.101 然后输入相对应的用户密码登录即可。 缺点： 不安全，极易受到暴力攻击 SSH密钥对认证方式登录 在本机创建密钥对 1ssh-keygen 输入此命令后,按照提示输入所需信息.然后再本地客户端会生成两个文件: ~/.ssh/id_rsa.pub (公钥)和 ~/.ssh/id_rsa (私钥)。 私钥保存在本地,打死也不说😂 公钥复制到服务器 1scp ~/.ssh/id_rsa.pub zhangsan@120.31.29.101: 不要遗漏最后的冒号，代表zhangsan用户的home目录 服务器创建authorized_keys文件 在 zhangsan 的home目录里，创建 .ssh 文件夹（如果不存在的话） 12mkdir ~/.sshtouch ~/.ssh/authorized_keys 将公钥添加到authorized_keys文件里 1cat ~/id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys 设置相应文件的权限 123chown -R zhangsan:zhangsan ~/sshchmod 700 ~/.sshchmod 600 ~/.ssh/authorized_keys 大功告成~ 参考《Modern PHP（中文版）》]]></content>
+      <categories>
+        <category>Linux/Mac</category>
+      </categories>
+      <tags>
+        <tag>SSH</tag>
+        <tag>运维部署</tag>
+        <tag>SSH登录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[高性能网站建设指南]]></title>
+    <url>%2F2017-03-01-High-performance-website-construction-guide.html</url>
+    <content type="text"><![CDATA[减少HTTP请求图片地图 适用场景：图片导航之类的。多个图变成一个图，利用 &lt;area&gt;&lt;area/&gt; 标签和 a 标签取代多个图片请求。 缺点： 手工方式很难完成且极易出错。 雪碧图 优于图片地图，灵活。 内联图片 使用 data:URL 模式，即 Base64模式 缺点： IE7 这些老式浏览器不支持，数据大小有限制 合并JS和CSS 理想情况下实施~目前流行模块化、组件化。 CDN 加速 添加 Expires 头 压缩组件 将样式表放在顶部 将 JS 放在底部 避免 CSS 表达式 使用外部 JavaScript 和 CSS 减少 DNS 查找 通过使用 Keep-Alive 和较少的域名来减少 DNS 查找 对 JS 代码进行压缩精简 避免重定向 状态码 303-307 是在 HTTP 1.1 中增加的，用来澄清对 302 的滥用。 ** 重定向之外的其他选择 ** 缺少结尾斜线当缺少URL结尾斜线时不会发生重定向 Alias、mod_rewrite和DirectorySlash 移除重复脚本 配置ETag 使用Ajax可缓存]]></content>
+      <categories>
+        <category>性能优化</category>
+      </categories>
+      <tags>
+        <tag>Web开发</tag>
+        <tag>性能优化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PHP手册阅读笔记(三)]]></title>
+    <url>%2F2017-02-17-PHP-Manual-reading-notes-3.html</url>
+    <content type="text"><![CDATA[递增递减每次碰见形如 $a++ 或 ++$a都没有什么底气,应该早点看手册的,上面写的清清楚楚. 例子 名称 效果 ++$a 前加 $a 的值加一,然后返回$a $a++ 后加 返回$a,然后将$a 的值加一 –$a 前减 $a 的值减一,然后返回$a $a– 后减 返回$a,然后将$a的值减一 有趣的🌰1234$a = "9D9";var_dump(++$a); //9E0$a = "9E0";var_dump(++$a); //float(10) 9E10=&gt;9e0=&gt;9*10^0 = 9 字符串运算符. 相关🌰123$var = 3;echo "Result: " . $var + 3; // + 号之前的强制转换成0echo "Result: " . ($var + 3); //6]]></content>
+      <categories>
+        <category>PHP</category>
+      </categories>
+      <tags>
+        <tag>PHP</tag>
+        <tag>PHP手册</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PHP手册阅读笔记(二)]]></title>
+    <url>%2F2017-01-18-PHP-Manual-reading-notes-2.html</url>
+    <content type="text"><![CDATA[布尔FALSE 布尔值 FALSE 本身 整型值 0（零） 浮点型值 0.0（零） 空字符串，以及字符串 “0” 不包括任何元素的数组 不包括任何成员变量的对象（仅 PHP 4.0 适用） 特殊类型 NULL（包括尚未赋值的变量） 从空标记生成的 SimpleXML 对象 有意思的🌰1234$x = true;$y = false;$z = $x || $y;var_dump((bool)$z); //true 1var_dump(0 == 'all'); // TRUE 'all'强制转换成了 int 0 超全局变量GET获取带.参数🌰 123//?chuck.norris=nevercriesecho $_GET['chuck.norris'],'&lt;hr/&gt;'; //错误echo $_GET['chuck_norris']; //正确]]></content>
+      <categories>
+        <category>PHP</category>
+      </categories>
+      <tags>
+        <tag>PHP</tag>
+        <tag>PHP手册</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PHP手册阅读笔记(一)]]></title>
+    <url>%2F2016-12-27-PHP-Manual-reading-notes-1.html</url>
+    <content type="text"><![CDATA[PHP短标签不鼓励使用短标签 结束标签如果文件内容是纯 PHP 代码，最好在文件末尾删除 PHP 结束标记。这可以避免在 PHP 结束标记之后万一意外加入了空格或者换行符，会导致 PHP 开始输出这些空白，而脚本中此时并无输出的意图。]]></content>
+      <categories>
+        <category>PHP</category>
+      </categories>
+      <tags>
+        <tag>PHP</tag>
+        <tag>PHP手册</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MySQL常用引擎比较]]></title>
+    <url>%2F2016-12-23-MySQL-commonly-used-engine-comparison.html</url>
+    <content type="text"><![CDATA[一表胜千言😂 特点 MyISAM InnoDB MEMORY MERGE NDB 存储限制 有 64BT 有 没有 有 事务安全 支持 锁机制 表锁 行锁 表锁 表锁 行锁 B树索引 支持 支持 支持 支持 支持 哈希索引 支持 支持 全文索引 支持 集群索引 支持 数据缓存 支持 支持 支持 索引缓存 支持 支持 支持 支持 支持 数据可压缩 支持 空间使用 低 高 N/A 低 低 内存使用 低 高 中等 低 高 批量插入的速度 高 低 高 高 高 支持外键 支持]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>MySQL引擎</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[替换Homebrew国内镜像源]]></title>
+    <url>%2F2016-12-23-Replace-Homebrew-domestic-mirror-source.html</url>
+    <content type="text"><![CDATA[原文出处: phpdragon-博客园我的配置和原文略有出入 安装与卸载1234ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"sudo rm -rf /usr/local/ 替换Homebrew默认源12cd /usr/local/Homebrew/git remote set-url origin git://mirrors.ustc.edu.cn/brew.git 替换homebrew-core默认源12cd /usr/local/Homebrew/Library/Taps/homebrew/homebrew-coregit remote set-url origin git://mirrors.ustc.edu.cn/homebrew-core.git 替换homebrew bottles默认源12echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles' &gt;&gt; ~/.bashrcsource ~/.bashrc]]></content>
+      <categories>
+        <category>Linux/Mac</category>
+      </categories>
+      <tags>
+        <tag>Mac</tag>
+        <tag>Homebrew</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MySQL基础之字符型]]></title>
+    <url>%2F2016-12-09-MySQL-based-on-the-character-type.html</url>
+    <content type="text"><![CDATA[2016年12月31日16:01:24更新 来自《深入浅出MySQL》 CHAR 与 VARCHAR的区别 char定长，varchar变长 char 不够指定长度时用”\0”(空格)来填充,取出时,会把右侧的空格全部抹掉 实际开发中,存储的字符较少,都是用的定长,速度快 不同存储引擎下的 CHAR 与 VARCHARMyISAM建议使用定长数据列代替变长数据列 InnoDB建议使用VARCHAR来处理.对于InnoDB存储引擎来说,内部的行存储格式是不区分固定长度和可变长度(所有数据行都使用指向数据列值的头指针),本质上使用char列不一定比varchar列性能要好,主要的性能因素是数据行的存储容量.由于char占据的空间比varchar大,所以使用varchar来最小化需要处理的数据行的存储总量和磁盘I/O是比较好的. MEMORY按照目前来说,都是使用定长的数据列存储,所以无论是char还是varchar都是作为char来处理的]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>MySQL基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MySQL基础之日期时间类型]]></title>
+    <url>%2F2016-12-06-MySQL-based-date-and-time-type.html</url>
+    <content type="text"><![CDATA[一图胜千言( ¯•ω•¯ ) TIMESTAMP 这个类型在实际开发中一般不怎么用到呢~一般都是用 INT UNSIGNED 来表示时间戳。]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>MySQL基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MySQL基础之数值类型]]></title>
+    <url>%2F2016-12-05-MySQL-based-on-the-value-type.html</url>
+    <content type="text"><![CDATA[INT 系列 以 INT 为例，在磁盘中占据 4 个字节，如何表示在磁盘中存储 INT 类型的数值 1 ？ 00000000 00000000 00000000 00000001 一个字节有8位，4个字节就是如上表示法。 INT(M) 到底代表什么含义？ 在过去的开发中，我一直进入了一个误区，以为M就是限制输入整型长度的。比如设置注册时间，大咧咧的写上 ** register_time INT(10) UNSIGNED ** 但是在整型中，M是指当数值宽度小于M位时，数值在前面填满宽度，和 zerofill 配合使用。如果不用0填充，M参数完全可以不用写，因为此时已经没有任何意义了。 FLOAT 系列FLOAT(M,D)DOUBLE(M,D)DECIMAL(M,D) M称为精度，D称为标度M表示整数位+小数位的总位数D表示小数位的位数然而浮点数 FLOAT 和 DOUBLE 有精度损失]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>MySQL基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MySQL基础之DCL]]></title>
+    <url>%2F2016-12-05-MySQL-based-on-DCL.html</url>
+    <content type="text"><![CDATA[赋权限1GRANT 权限1,权限2,........,权限n ON 数据库名.* TO 用户名@IP; 撤销权限1REVOKE 权限1,权限2,........,权限n on 数据库名.* FROM 用户名@IP;]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>MySQL基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MySQL基础之DML]]></title>
+    <url>%2F2016-12-02-MySQL-based-on-DML.html</url>
+    <content type="text"><![CDATA[插入记录 单条数据 1INSERT INTO tbname (field1, field2 , ... , fieldn) VALUES (value1, value2, ... , valuen); 多条数据 123456INSERT INTO tbname (field1, field2, ... , fieldn)VALUES(record1_value1, record1_value2,..., record1_valuen),(record2_value1, record2_value2,..., record2_valuen),...(recordn_value1, recordn_value2,..., recordn_valuen); ** 该特性可以使得 MySQL 在插入大量记录时，节省了很多的网络开销，大大提高插入效率。 ** 更新记录 单表更新 1UPDATE tbname SET field1 = value1, field2 = value2,..., fieldn = valuen [WHERE CONDITION]; 多表更新 1UPDATE t1,t2,...,tn SET t1.field1=expr1,tn.fieldn=exprn [WHERE CONDITION]; ** 多表更新更多用在根据一个表的字段动态地更新另一个表的字段。 ** 删除记录 单表数据 1DELETE FROM tbname [WHERE CONDITION] 多表数据 1DELETE FROM t1,t2,...,tn FROM t1,t2,...,tn [WHERE CONDITION] 查询记录 基本语法 1SELECT * FROM tbname [WHERE CONDITION] 查询不重复的记录 1SELECT DISTINCT filedname FROM tbname; 排序 1SELECT * FROM tbname [WHERE CONDITION] [ORDER BY field1 [DESC|ASC],field2 [DESC|ASC],...,fieldn [DESC|ASC]] 限制 1SELECT .... [LIMIT offset_start,row_count] 聚合 123456SELECT [field1,field2,...,fieldn] fun_nameFROM tbname[WHERE CONDITION][GROUP BY field1,field2,...,fieldn[WITH ROLLUP]][HAVING where_condition] WITH ROLLUP 是可选语法，表示是否对分类集合后的结果再进行汇总 表连接INNOR JOIN, LEFT JOIN, RIGHT JOIN 子查询关键词：in、not in、=、！=、exists、not exists等 联合查询 123456SELECT * FROM t1UNION|UNION ALLSELECT * FROM t2...UNION|UNION ALLSELECT * FROM tn]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>MySQL基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[MySQL基础之DDL]]></title>
+    <url>%2F2016-12-01-MySQL-based-on-DDL.html</url>
+    <content type="text"><![CDATA[库操作显示数据库1SHOW DATABASES; 创建数据库1CREATE DATABASE dbname; 选择数据库1USE dbname; 删除数据库1DROP DATABASE dbname; 表操作显示库下面的表1SHOW TABLES; 创建表123456CREATE TABLE tname ( 列名称1 列类型 [列参数] [not null default ], ....列2... .... 列名称N 列类型 [列参数] [not null default ])ENGINE MyISAM/InnoDB CHASET utf8/gbk; 查看表定义1DESC tbname; 查看创建表的SQL语句1SHOW CREATE TABLE tbname \G; ** \G可以更好的显示较长的内容 ** 删除表1DROP TABLE tbname; 修改表 修改表类型 1ALTER TABLE tbname MODIFY [COLUMN] column_definition [FIRST|AFTER col_name]; 增加表字段 1ALTER TABLE tbname ADD [COLUMN] column_definition [FIRST|AFTER col_name]; 删除表字段 1ALTER TABLE tbname DROP [COLUMN] col_name; 修改字段名 1ALTER TABLE tbname CHANGE [COLUMN] old_col_name column_definition [FIRST|AFTER col_name]; CHANGE 和 MODIFY 都可以修改表的定义，CHANGE 后面需要写两次列名，但是可以修改列名称，MODIFY 则不能。CHANGE/FIRST|AFTER COLUMN 这些关键词都属于 MySQL 在标准 SQL 上的扩展，在其他数据库上不一定适用。 修改表名1ALTER TABLE tbname RENAME [TO] new_tbname;]]></content>
+      <categories>
+        <category>MySQL</category>
+      </categories>
+      <tags>
+        <tag>MySQL</tag>
+        <tag>MySQL基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[重新学习Git]]></title>
+    <url>%2F2016-11-22-Relearning_Git.html</url>
+    <content type="text"><![CDATA[帐号初始化12git config --global user.name "yourname"git config --global user.email "youremail" 创建版本库创建新仓库1git init 克隆远程仓库1git clone url 查看仓库状态1git status 添加与提交文件添加到暂存区1git add test.txt 文件全部提交到暂存区1git add . 文件提交到本地版本库1git commit -m "This is common" 查看提交历史1git log 远程推送没有克隆现有仓库1git remote add origin url 远程推送1git push origin &lt;branch&gt; 查看文件差异查看文件差异之工作区VS暂存区1git diff 文件名 查看文件差异之暂存区VS版本库1git diff --cached 文件名 查看文件差异之工作区VS版本库1git diff 分支名 文件名 显示摘要1git diff --stat 修改，移动文件的名称或目录的名称1git mv oldfilename newfilename 删除文件1git rm filename 暂存区/版本库拉取到工作区1git checkout -- filename 分支 创建新分支并切换1git checkout -b feature_x 删除分支1git branch -d feature_x]]></content>
+      <categories>
+        <category>运维部署</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+</search>
