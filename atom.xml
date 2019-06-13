@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lazy-hub.com/"/>
-  <updated>2019-06-11T03:03:44.453Z</updated>
+  <updated>2019-06-13T05:27:38.683Z</updated>
   <id>https://lazy-hub.com/</id>
   
   <author>
@@ -17,24 +17,54 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Laravel 5.7 新特性之DumpServer</title>
+    <link href="https://lazy-hub.com/2019-06-13-Laravel_5_7_Dump_Server.html"/>
+    <id>https://lazy-hub.com/2019-06-13-Laravel_5_7_Dump_Server.html</id>
+    <published>2019-06-13T04:31:32.000Z</published>
+    <updated>2019-06-13T05:27:38.683Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;相关依赖&quot;&gt;&lt;a href=&quot;#相关依赖&quot; class=&quot;headerlink&quot; title=&quot;相关依赖&quot;&gt;&lt;/a&gt;相关依赖&lt;/h2&gt;&lt;p&gt;在 &lt;code&gt;composer.json&lt;/code&gt; 文件的 &lt;code&gt;require-dev&lt;/code&gt; 中有关于 &lt;code&gt;dumper-server&lt;/code&gt; 的依赖：&lt;/p&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&quot;beyondcode/laravel-dump-server&quot;: &quot;^1.0&quot;,&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;h2 id=&quot;如何使用&quot;&gt;&lt;a href=&quot;#如何使用&quot; class=&quot;headerlink&quot; title=&quot;如何使用&quot;&gt;&lt;/a&gt;如何使用&lt;/h2&gt;&lt;p&gt;在路由 &lt;code&gt;web.php&lt;/code&gt; 中写一个测试路由：&lt;/p&gt;
+&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Route::get(&lt;span class=&quot;string&quot;&gt;&#39;/hello&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   dump(request()-&amp;gt;all());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;   &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;Hello&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="Laravel 5.7 新特性" scheme="https://lazy-hub.com/categories/Laravel-5-7-%E6%96%B0%E7%89%B9%E6%80%A7/"/>
+    
+    
+      <category term="Laravel" scheme="https://lazy-hub.com/tags/Laravel/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Laravel 5.7 新特性之邮箱验证</title>
     <link href="https://lazy-hub.com/2019-06-11-Laravel_5_7_Email_Verification.html"/>
     <id>https://lazy-hub.com/2019-06-11-Laravel_5_7_Email_Verification.html</id>
     <published>2019-06-10T23:34:05.000Z</published>
-    <updated>2019-06-11T03:03:44.453Z</updated>
+    <updated>2019-06-13T04:13:16.194Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;ul&gt;
+      &lt;h2 id=&quot;使用方式&quot;&gt;&lt;a href=&quot;#使用方式&quot; class=&quot;headerlink&quot; title=&quot;使用方式&quot;&gt;&lt;/a&gt;使用方式&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;创建一个 Laravel 项目&lt;/li&gt;
 &lt;/ul&gt;
-&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
-        
-      
+&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;laravel new knowledge&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;修改配置 形如：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;DB_CONNECTION=mysql&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;DB_HOST=127.0.0.1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;DB_PORT=3306&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;DB_DATABASE=knowledge&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;DB_USERNAME=root&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;DB_PASSWORD=&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;MAIL_DRIVER=log #log驱动仅为开发便利&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;3秒搭建用户认证&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight sh&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;php artisan make:auth&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;php artisan migrate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Laravel 5.7 在默认用户表中新增了 &lt;code&gt;email_verified_at&lt;/code&gt; 字段&lt;/strong&gt;&lt;/p&gt;
     
     </summary>
     
@@ -694,35 +724,6 @@
       <category term="Mac" scheme="https://lazy-hub.com/tags/Mac/"/>
     
       <category term="Homebrew" scheme="https://lazy-hub.com/tags/Homebrew/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL基础之字符型</title>
-    <link href="https://lazy-hub.com/2016-12-09-MySQL-based-on-the-character-type.html"/>
-    <id>https://lazy-hub.com/2016-12-09-MySQL-based-on-the-character-type.html</id>
-    <published>2016-12-09T02:54:07.000Z</published>
-    <updated>2019-06-11T03:03:44.455Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;2016年12月31日16:01:24更新 来自&lt;a href=&quot;https://book.douban.com/subject/25817684/&quot; target=&quot;_blank&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="MySQL" scheme="https://lazy-hub.com/categories/MySQL/"/>
-    
-    
-      <category term="MySQL" scheme="https://lazy-hub.com/tags/MySQL/"/>
-    
-      <category term="MySQL基础" scheme="https://lazy-hub.com/tags/MySQL%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   

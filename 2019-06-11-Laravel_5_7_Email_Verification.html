@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="创建一个 Laravel 项目  1laravel new knowledge   修改配置 形如：  12345678DB_CONNECTION=mysqlDB_HOST=127.0.0.1DB_PORT=3306DB_DATABASE=knowledgeDB_USERNAME=rootDB_PASSWORD=MAIL_DRIVER=log #log驱动仅为开发便利   3秒搭建用户认证  1">
+<meta name="description" content="使用方式 创建一个 Laravel 项目  1laravel new knowledge   修改配置 形如：  12345678DB_CONNECTION=mysqlDB_HOST=127.0.0.1DB_PORT=3306DB_DATABASE=knowledgeDB_USERNAME=rootDB_PASSWORD=MAIL_DRIVER=log #log驱动仅为开发便利   3秒搭建用户认">
 <meta name="keywords" content="Laravel">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Laravel 5.7 新特性之邮箱验证">
 <meta property="og:url" content="https://lazy-hub.com/2019-06-11-Laravel_5_7_Email_Verification.html">
 <meta property="og:site_name" content="做牛当码">
-<meta property="og:description" content="创建一个 Laravel 项目  1laravel new knowledge   修改配置 形如：  12345678DB_CONNECTION=mysqlDB_HOST=127.0.0.1DB_PORT=3306DB_DATABASE=knowledgeDB_USERNAME=rootDB_PASSWORD=MAIL_DRIVER=log #log驱动仅为开发便利   3秒搭建用户认证  1">
+<meta property="og:description" content="使用方式 创建一个 Laravel 项目  1laravel new knowledge   修改配置 形如：  12345678DB_CONNECTION=mysqlDB_HOST=127.0.0.1DB_PORT=3306DB_DATABASE=knowledgeDB_USERNAME=rootDB_PASSWORD=MAIL_DRIVER=log #log驱动仅为开发便利   3秒搭建用户认">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-11T03:03:44.453Z">
+<meta property="og:updated_time" content="2019-06-13T04:13:16.194Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Laravel 5.7 新特性之邮箱验证">
-<meta name="twitter:description" content="创建一个 Laravel 项目  1laravel new knowledge   修改配置 形如：  12345678DB_CONNECTION=mysqlDB_HOST=127.0.0.1DB_PORT=3306DB_DATABASE=knowledgeDB_USERNAME=rootDB_PASSWORD=MAIL_DRIVER=log #log驱动仅为开发便利   3秒搭建用户认证  1">
+<meta name="twitter:description" content="使用方式 创建一个 Laravel 项目  1laravel new knowledge   修改配置 形如：  12345678DB_CONNECTION=mysqlDB_HOST=127.0.0.1DB_PORT=3306DB_DATABASE=knowledgeDB_USERNAME=rootDB_PASSWORD=MAIL_DRIVER=log #log驱动仅为开发便利   3秒搭建用户认">
 
 
 
@@ -376,7 +376,7 @@
       
 
       
-        <ul>
+        <h2 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h2><ul>
 <li>创建一个 Laravel 项目</li>
 </ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">laravel new knowledge</span><br></pre></td></tr></table></figure>
@@ -392,6 +392,10 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">php artisan make:auth</span><br><span class="line">php artisan migrate</span><br></pre></td></tr></table></figure>
 
 <p><strong>Laravel 5.7 在默认用户表中新增了 <code>email_verified_at</code> 字段</strong></p>
+<a id="more"></a>
+
+
+
 <ul>
 <li>在 <code>User</code> 模型文件中实现 <code>MustVerifyEmail</code> 接口</li>
 </ul>
@@ -410,6 +414,19 @@
 <ul>
 <li>注册用户后，在 log 日志中找到对应邮件，点击验证链接验证邮箱</li>
 </ul>
+<h2 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h2><ul>
+<li><code>User</code> 模型中实现了 <code>MustVerifyEmail</code>接口</li>
+</ul>
+<ul>
+<li>在 <code>App\Providers\EventServiceProvider.php</code> 中有一个注册后的事件：</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Registered::class =&gt; [</span><br><span class="line">  SendEmailVerificationNotification::class,</span><br><span class="line">],</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>打开 <code>SendEmailVerificationNotification.php</code></li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">handle</span><span class="params">(Registered $event)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">if</span> ($event-&gt;user <span class="keyword">instanceof</span> MustVerifyEmail &amp;&amp; ! $event-&gt;user-&gt;hasVerifiedEmail()) &#123;</span><br><span class="line">    $event-&gt;user-&gt;sendEmailVerificationNotification();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -449,6 +466,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019-06-13-Laravel_5_7_Dump_Server.html" rel="prev" title="Laravel 5.7 新特性之DumpServer">
+                Laravel 5.7 新特性之DumpServer <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -500,8 +521,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -518,7 +548,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -570,6 +600,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用方式"><span class="nav-number">1.</span> <span class="nav-text">使用方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现原理"><span class="nav-number">2.</span> <span class="nav-text">实现原理</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Laravel 5.7 新特性之DumpServer]]></title>
+    <url>%2F2019-06-13-Laravel_5_7_Dump_Server.html</url>
+    <content type="text"><![CDATA[相关依赖在 composer.json 文件的 require-dev 中有关于 dumper-server 的依赖： 1"beyondcode/laravel-dump-server": "^1.0", 如何使用在路由 web.php 中写一个测试路由： 1234Route::get('/hello', function () &#123; dump(request()-&gt;all()); return 'Hello';&#125;); 打开 url http://xxx.test/hello?name=aaa，页面中只显示 Hello 字符串。需要执行： 1php artisan dump-server 进入控制台收集 dump 信息。 与 dd 函数相比的优势dd 函数是 dump and die，程序直接中止执行。而 dump 不影响程序的正常运行，且在控制台才能查看 dump 执行结果，更便于调试。]]></content>
+      <categories>
+        <category>Laravel 5.7 新特性</category>
+      </categories>
+      <tags>
+        <tag>Laravel</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Laravel 5.7 新特性之邮箱验证]]></title>
     <url>%2F2019-06-11-Laravel_5_7_Email_Verification.html</url>
-    <content type="text"><![CDATA[创建一个 Laravel 项目 1laravel new knowledge 修改配置 形如： 12345678DB_CONNECTION=mysqlDB_HOST=127.0.0.1DB_PORT=3306DB_DATABASE=knowledgeDB_USERNAME=rootDB_PASSWORD=MAIL_DRIVER=log #log驱动仅为开发便利 3秒搭建用户认证 12php artisan make:authphp artisan migrate Laravel 5.7 在默认用户表中新增了 email_verified_at 字段 在 User 模型文件中实现 MustVerifyEmail 接口 1234class User extends Authenticatable implements MustVerifyEmail &#123; ...&#125; 路由web.php文件中配置邮箱验证 1Auth::routes(['verify' =&gt; true]); 利用 verified 中间件，使其用户必须邮箱验证 1234# 具体设置根据实际开发Route::get('/', function () &#123; return view('welcome');&#125;)-&gt;middleware('verified'); 注册用户后，在 log 日志中找到对应邮件，点击验证链接验证邮箱]]></content>
+    <content type="text"><![CDATA[使用方式 创建一个 Laravel 项目 1laravel new knowledge 修改配置 形如： 12345678DB_CONNECTION=mysqlDB_HOST=127.0.0.1DB_PORT=3306DB_DATABASE=knowledgeDB_USERNAME=rootDB_PASSWORD=MAIL_DRIVER=log #log驱动仅为开发便利 3秒搭建用户认证 12php artisan make:authphp artisan migrate Laravel 5.7 在默认用户表中新增了 email_verified_at 字段 在 User 模型文件中实现 MustVerifyEmail 接口 1234class User extends Authenticatable implements MustVerifyEmail &#123; ...&#125; 路由web.php文件中配置邮箱验证 1Auth::routes(['verify' =&gt; true]); 利用 verified 中间件，使其用户必须邮箱验证 1234# 具体设置根据实际开发Route::get('/', function () &#123; return view('welcome');&#125;)-&gt;middleware('verified'); 注册用户后，在 log 日志中找到对应邮件，点击验证链接验证邮箱 实现原理 User 模型中实现了 MustVerifyEmail接口 在 App\Providers\EventServiceProvider.php 中有一个注册后的事件： 123Registered::class =&gt; [ SendEmailVerificationNotification::class,], 打开 SendEmailVerificationNotification.php 123456public function handle(Registered $event)&#123; if ($event-&gt;user instanceof MustVerifyEmail &amp;&amp; ! $event-&gt;user-&gt;hasVerifiedEmail()) &#123; $event-&gt;user-&gt;sendEmailVerificationNotification(); &#125;&#125;]]></content>
       <categories>
         <category>Laravel 5.7 新特性</category>
       </categories>
