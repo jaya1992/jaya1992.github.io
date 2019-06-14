@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[TDD 构建 Laravel 应用之遇见 Birdboard]]></title>
+    <url>%2F2019-06-14-build-a-laravel-app-with-tdd-01.html</url>
+    <content type="text"><![CDATA[本系列文章为 laracasts.com 的系列视频教程 ——Build A Laravel App With TDD 的学习笔记，若喜欢该系列视频，可去该网站订阅后下载该系列视频， 支持正版 。 开发环境 Mac 推荐 Valet Windows 推荐 Laragon 创建应用1laravel new birdboard 此时打开 birdboard.test ，显示页面： 加入版本库123git initgit add .git commit -m "安装框架"]]></content>
+      <categories>
+        <category>TDD 构建 Laravel 应用</category>
+      </categories>
+      <tags>
+        <tag>Laravel</tag>
+        <tag>TDD 构建 Laravel 应用</tag>
+        <tag>TDD</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Laravel 5.7 新特性之DumpServer]]></title>
     <url>%2F2019-06-13-Laravel_5_7_Dump_Server.html</url>
     <content type="text"><![CDATA[相关依赖在 composer.json 文件的 require-dev 中有关于 dumper-server 的依赖： 1"beyondcode/laravel-dump-server": "^1.0", 如何使用在路由 web.php 中写一个测试路由： 1234Route::get('/hello', function () &#123; dump(request()-&gt;all()); return 'Hello';&#125;); 打开 url http://xxx.test/hello?name=aaa，页面中只显示 Hello 字符串。需要执行： 1php artisan dump-server 进入控制台收集 dump 信息。 与 dd 函数相比的优势dd 函数是 dump and die，程序直接中止执行。而 dump 不影响程序的正常运行，且在控制台才能查看 dump 执行结果，更便于调试。]]></content>

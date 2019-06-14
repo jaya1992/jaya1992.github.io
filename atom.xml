@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lazy-hub.com/"/>
-  <updated>2019-06-13T05:27:38.683Z</updated>
+  <updated>2019-06-14T05:16:03.892Z</updated>
   <id>https://lazy-hub.com/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>TDD 构建 Laravel 应用之遇见 Birdboard</title>
+    <link href="https://lazy-hub.com/2019-06-14-build-a-laravel-app-with-tdd-01.html"/>
+    <id>https://lazy-hub.com/2019-06-14-build-a-laravel-app-with-tdd-01.html</id>
+    <published>2019-06-14T04:18:14.000Z</published>
+    <updated>2019-06-14T05:16:03.892Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;本系列文章为 &lt;code&gt;laracasts.com&lt;/code&gt; 的系列视频教程 ——&lt;a href=&quot;https://laracasts.com/series/build-a-laravel-app-with-tdd&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="TDD 构建 Laravel 应用" scheme="https://lazy-hub.com/categories/TDD-%E6%9E%84%E5%BB%BA-Laravel-%E5%BA%94%E7%94%A8/"/>
+    
+    
+      <category term="Laravel" scheme="https://lazy-hub.com/tags/Laravel/"/>
+    
+      <category term="TDD 构建 Laravel 应用" scheme="https://lazy-hub.com/tags/TDD-%E6%9E%84%E5%BB%BA-Laravel-%E5%BA%94%E7%94%A8/"/>
+    
+      <category term="TDD" scheme="https://lazy-hub.com/tags/TDD/"/>
+    
+  </entry>
   
   <entry>
     <title>Laravel 5.7 新特性之DumpServer</title>
@@ -699,31 +730,6 @@
       <category term="MySQL" scheme="https://lazy-hub.com/tags/MySQL/"/>
     
       <category term="MySQL引擎" scheme="https://lazy-hub.com/tags/MySQL%E5%BC%95%E6%93%8E/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>替换Homebrew国内镜像源</title>
-    <link href="https://lazy-hub.com/2016-12-23-Replace-Homebrew-domestic-mirror-source.html"/>
-    <id>https://lazy-hub.com/2016-12-23-Replace-Homebrew-domestic-mirror-source.html</id>
-    <published>2016-12-23T03:52:54.000Z</published>
-    <updated>2019-06-11T03:03:44.461Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;原文出处: &lt;a href=&quot;http://www.cnblogs.com/phpdragon/p/5637954.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;phpdragon-博客园&lt;/a&gt;&lt;br&gt;我的配置和原文略有出入&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;安装与卸载&quot;&gt;&lt;a href=&quot;#安装与卸载&quot; class=&quot;headerlink&quot; title=&quot;安装与卸载&quot;&gt;&lt;/a&gt;安装与卸载&lt;/h2&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)&quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;sudo rm -rf /usr/local/&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="Linux/Mac" scheme="https://lazy-hub.com/categories/Linux-Mac/"/>
-    
-    
-      <category term="Mac" scheme="https://lazy-hub.com/tags/Mac/"/>
-    
-      <category term="Homebrew" scheme="https://lazy-hub.com/tags/Homebrew/"/>
     
   </entry>
   
