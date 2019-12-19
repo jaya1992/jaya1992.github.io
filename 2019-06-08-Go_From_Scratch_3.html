@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="做牛当码">
 <meta property="og:description" content="Go 语言中的常量不要大写，在Go语言中，首字母大小写是有含义的 普通常量定义 单个常量定义  1const logname string = &quot;errorlog&quot;   等同于：  1const logname = &quot;errorlog&quot;   多个常量赋值  1const a,b,c = &quot;hello&quot;, false, 2   括号表示法  1234const (		log = &quot;error.log">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-11T03:03:44.460Z">
+<meta property="og:updated_time" content="2019-07-23T09:13:00.269Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从零开始Go之常量定义">
 <meta name="twitter:description" content="Go 语言中的常量不要大写，在Go语言中，首字母大小写是有含义的 普通常量定义 单个常量定义  1const logname string = &quot;errorlog&quot;   等同于：  1const logname = &quot;errorlog&quot;   多个常量赋值  1const a,b,c = &quot;hello&quot;, false, 2   括号表示法  1234const (		log = &quot;error.log">
@@ -409,7 +409,20 @@
 <p>输出结果：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 1 2</span><br></pre></td></tr></table></figure>
 
-<h3 id="巧用-iota-之过滤"><a href="#巧用-iota-之过滤" class="headerlink" title="巧用 iota 之过滤"></a>巧用 iota 之过滤</h3>
+<h3 id="巧用-iota-之过滤"><a href="#巧用-iota-之过滤" class="headerlink" title="巧用 iota 之过滤"></a>巧用 iota 之过滤</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">const</span> (</span><br><span class="line">		java = <span class="literal">iota</span></span><br><span class="line">		_</span><br><span class="line">		php</span><br><span class="line">		python</span><br><span class="line">		golang</span><br><span class="line">	)</span><br><span class="line">	fmt.Println(java, php, python, golang)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 2 3 4</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>巧用 iota 之运算</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">const</span> (</span><br><span class="line">		b = <span class="number">1</span> &lt;&lt; (<span class="number">10</span> * <span class="literal">iota</span>)</span><br><span class="line">		kb</span><br><span class="line">		mb</span><br><span class="line">		gb</span><br><span class="line">		tb</span><br><span class="line">		pb</span><br><span class="line">	)</span><br><span class="line">	fmt.Println(b, kb, mb, gb, tb, pb)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 1024 1048576 1073741824 1099511627776 1125899906842624</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     
@@ -532,7 +545,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -543,7 +556,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -554,7 +567,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -636,7 +649,7 @@
 
 
 
-  <div class="footer-custom"><a class="theme-link" href="http://www.miitbeian.gov.cn/">浙ICP备17030765号-1</a> <a rel="external nofollow" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010602008456" class="theme-link"><img style="display:inline-block;" src="/static/1905/ghs.png">浙公网安备 33010602008456号</a></div>
+  <div class="footer-custom"><a class="theme-link" href="http://www.beian.miit.gov.cn/" target="_blank">浙ICP备17030765号-1</a> <a rel="external nofollow" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010602008456" class="theme-link" target="_blank"><img style="display:inline-block;" src="/static/1905/ghs.png">浙公网安备 33010602008456号</a></div>
 
 
         

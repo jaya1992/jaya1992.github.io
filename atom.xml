@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lazy-hub.com/"/>
-  <updated>2019-06-14T05:16:03.892Z</updated>
+  <updated>2019-08-16T07:29:36.200Z</updated>
   <id>https://lazy-hub.com/</id>
   
   <author>
@@ -15,6 +15,502 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>VsCode 使用 php cs fixer 插件高效格式化代码</title>
+    <link href="https://lazy-hub.com/2019-08-16-vscode-with-php-cs-fixer.html"/>
+    <id>https://lazy-hub.com/2019-08-16-vscode-with-php-cs-fixer.html</id>
+    <published>2019-08-16T06:54:26.000Z</published>
+    <updated>2019-08-16T07:29:36.200Z</updated>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;下载相关 phar 文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;打开&lt;code&gt;https://github.com/FriendsOfPHP/PHP-CS-Fixer&lt;/code&gt; , 下载 &lt;a href=&quot;https://cs.symfony.com/download/php-cs-fixer-v2.phar&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;php-cs-fixer.phar&lt;/a&gt;  文件&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;安装 &lt;code&gt;php cs fixer&lt;/code&gt; 扩展&lt;/li&gt;
+&lt;li&gt;编写自定义配置文件 &lt;code&gt;.php_cs&lt;/code&gt; &lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="开发利器" scheme="https://lazy-hub.com/categories/%E5%BC%80%E5%8F%91%E5%88%A9%E5%99%A8/"/>
+    
+    
+      <category term="Vscode" scheme="https://lazy-hub.com/tags/Vscode/"/>
+    
+      <category term="PHP-CS-Fixer" scheme="https://lazy-hub.com/tags/PHP-CS-Fixer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot学习之整合Mybatis Generator</title>
+    <link href="https://lazy-hub.com/2019-08-08-SpringBoot-Mybatis-Generator.html"/>
+    <id>https://lazy-hub.com/2019-08-08-SpringBoot-Mybatis-Generator.html</id>
+    <published>2019-08-07T23:16:23.000Z</published>
+    <updated>2019-08-08T05:13:53.705Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;pom-xml-文件配置&quot;&gt;&lt;a href=&quot;#pom-xml-文件配置&quot; class=&quot;headerlink&quot; title=&quot;pom.xml 文件配置&quot;&gt;&lt;/a&gt;pom.xml 文件配置&lt;/h2&gt;&lt;figure class=&quot;highlight xml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;63&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;64&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;65&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;66&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;67&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;68&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;69&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;70&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;71&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;72&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;73&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;74&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;75&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;76&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;77&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;78&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;79&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;80&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;81&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;82&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;83&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;84&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;85&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;86&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;87&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;88&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;89&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;90&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;91&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;92&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;93&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;94&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;95&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;96&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;97&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;98&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;99&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;100&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;101&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;102&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;103&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;104&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;105&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;106&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;107&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;108&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;109&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;110&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;project&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;xmlns&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;http://maven.apache.org/POM/4.0.0&quot;&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;xmlns:xsi&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;         &lt;span class=&quot;attr&quot;&gt;xsi:schemaLocation&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;modelVersion&lt;/span&gt;&amp;gt;&lt;/span&gt;4.0.0&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;modelVersion&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;parent&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;org.springframework.boot&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;spring-boot-starter-parent&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;version&lt;/span&gt;&amp;gt;&lt;/span&gt;2.1.6.RELEASE&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;version&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;relativePath&lt;/span&gt;/&amp;gt;&lt;/span&gt; &lt;span class=&quot;comment&quot;&gt;&amp;lt;!-- lookup parent from repository --&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;parent&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;com.example&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;demo&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;version&lt;/span&gt;&amp;gt;&lt;/span&gt;0.0.1-SNAPSHOT&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;version&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;name&lt;/span&gt;&amp;gt;&lt;/span&gt;demo&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;name&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;description&lt;/span&gt;&amp;gt;&lt;/span&gt;Demo project for Spring Boot&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;description&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;properties&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;java.version&lt;/span&gt;&amp;gt;&lt;/span&gt;1.8&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;java.version&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;mysql.version&lt;/span&gt;&amp;gt;&lt;/span&gt;6.0.6&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;mysql.version&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;mybatis.version&lt;/span&gt;&amp;gt;&lt;/span&gt;1.3.4&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;mybatis.version&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;lombok.version&lt;/span&gt;&amp;gt;&lt;/span&gt;1.18.6&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;lombok.version&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;mybatis.generator.version&lt;/span&gt;&amp;gt;&lt;/span&gt;1.3.5&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;mybatis.generator.version&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;alibaba.druid.version&lt;/span&gt;&amp;gt;&lt;/span&gt;1.1.18&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;alibaba.druid.version&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;properties&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;dependencies&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;dependency&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;org.springframework.boot&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;spring-boot-starter-web&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;dependency&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;dependency&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;org.springframework.boot&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;spring-boot-starter-test&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;scope&lt;/span&gt;&amp;gt;&lt;/span&gt;test&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;scope&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;dependency&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;&amp;lt;!--数据库相关 BEGIN--&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;dependency&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;mysql&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;mysql-connector-java&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;version&lt;/span&gt;&amp;gt;&lt;/span&gt;$&amp;#123;mysql.version&amp;#125;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;version&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;dependency&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;&amp;lt;!--Mybatis--&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;dependency&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;org.mybatis.spring.boot&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;mybatis-spring-boot-starter&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;version&lt;/span&gt;&amp;gt;&lt;/span&gt;$&amp;#123;mybatis.version&amp;#125;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;version&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;dependency&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;dependency&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;com.alibaba&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;druid-spring-boot-starter&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;version&lt;/span&gt;&amp;gt;&lt;/span&gt;$&amp;#123;alibaba.druid.version&amp;#125;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;version&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;dependency&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;&amp;lt;!--数据库相关 END--&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;&amp;lt;!--工具类 BEGIN--&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;dependency&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;org.projectlombok&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;lombok&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;version&lt;/span&gt;&amp;gt;&lt;/span&gt;$&amp;#123;lombok.version&amp;#125;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;version&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;scope&lt;/span&gt;&amp;gt;&lt;/span&gt;provided&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;scope&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;dependency&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;&amp;lt;!--工具类 END--&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;dependencies&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;build&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;resources&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;resource&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;directory&lt;/span&gt;&amp;gt;&lt;/span&gt;src/main/java&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;directory&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;includes&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;include&lt;/span&gt;&amp;gt;&lt;/span&gt;**/*.xml&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;include&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;includes&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;filtering&lt;/span&gt;&amp;gt;&lt;/span&gt;true&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;filtering&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;resource&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;resource&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;directory&lt;/span&gt;&amp;gt;&lt;/span&gt;src/main/resources&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;directory&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;includes&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;include&lt;/span&gt;&amp;gt;&lt;/span&gt;**/*.properties&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;include&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;includes&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;resource&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;resources&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;plugins&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;plugin&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;org.springframework.boot&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;spring-boot-maven-plugin&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;plugin&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;plugin&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;org.mybatis.generator&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;mybatis-generator-maven-plugin&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;version&lt;/span&gt;&amp;gt;&lt;/span&gt;$&amp;#123;mybatis.generator.version&amp;#125;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;version&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;configuration&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;configurationFile&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        $&amp;#123;basedir&amp;#125;/src/main/resources/generatorConfig.xml&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;configurationFile&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;overwrite&lt;/span&gt;&amp;gt;&lt;/span&gt;true&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;overwrite&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;verbose&lt;/span&gt;&amp;gt;&lt;/span&gt;true&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;verbose&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;configuration&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;dependencies&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;dependency&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;mysql&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;groupId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;mysql-connector-java&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;artifactId&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;version&lt;/span&gt;&amp;gt;&lt;/span&gt;$&amp;#123;mysql.version&amp;#125;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;version&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;dependency&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;dependencies&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;plugin&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;plugins&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;build&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;project&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="SpringBoot学习之旅" scheme="https://lazy-hub.com/categories/SpringBoot%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%97%85/"/>
+    
+    
+      <category term="SpringBoot" scheme="https://lazy-hub.com/tags/SpringBoot/"/>
+    
+      <category term="Mybatis Generator" scheme="https://lazy-hub.com/tags/Mybatis-Generator/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TDD 构建 Laravel 应用之任务UI更新</title>
+    <link href="https://lazy-hub.com/2019-07-20-build-a-laravel-app-with-tdd-13.html"/>
+    <id>https://lazy-hub.com/2019-07-20-build-a-laravel-app-with-tdd-13.html</id>
+    <published>2019-07-20T02:29:04.000Z</published>
+    <updated>2019-08-02T06:36:20.522Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;本系列文章为 &lt;code&gt;laracasts.com&lt;/code&gt; 的系列视频教程 ——&lt;a href=&quot;https://laracasts.com/series/build-a-laravel-app-with-tdd&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="TDD 构建 Laravel 应用" scheme="https://lazy-hub.com/categories/TDD-%E6%9E%84%E5%BB%BA-Laravel-%E5%BA%94%E7%94%A8/"/>
+    
+    
+      <category term="Laravel" scheme="https://lazy-hub.com/tags/Laravel/"/>
+    
+      <category term="TDD 构建 Laravel 应用" scheme="https://lazy-hub.com/tags/TDD-%E6%9E%84%E5%BB%BA-Laravel-%E5%BA%94%E7%94%A8/"/>
+    
+      <category term="Tailwind" scheme="https://lazy-hub.com/tags/Tailwind/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从零开始Go之循环语句</title>
+    <link href="https://lazy-hub.com/2019-07-19-Go_From_Scratch_5.html"/>
+    <id>https://lazy-hub.com/2019-07-19-Go_From_Scratch_5.html</id>
+    <published>2019-07-18T23:45:17.000Z</published>
+    <updated>2019-07-23T09:13:00.269Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Go 语言中的 &lt;code&gt;for&lt;/code&gt; 循环结构如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight go&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;sum := &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; i:= &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;; i &amp;lt; &lt;span class=&quot;number&quot;&gt;100&lt;/span&gt;; i++ &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  sum += i&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;示例 十进制转二进制&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="从零开始Go" scheme="https://lazy-hub.com/categories/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8BGo/"/>
+    
+    
+      <category term="从零开始Go" scheme="https://lazy-hub.com/tags/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8BGo/"/>
+    
+      <category term="Go" scheme="https://lazy-hub.com/tags/Go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从零开始Go之条件语句</title>
+    <link href="https://lazy-hub.com/2019-07-19-Go_From_Scratch_4.html"/>
+    <id>https://lazy-hub.com/2019-07-19-Go_From_Scratch_4.html</id>
+    <published>2019-07-18T22:47:12.000Z</published>
+    <updated>2019-07-23T09:13:00.270Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;If&quot;&gt;&lt;a href=&quot;#If&quot; class=&quot;headerlink&quot; title=&quot;If&quot;&gt;&lt;/a&gt;If&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt; 示例：文件读取&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight go&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;package&lt;/span&gt; main&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; (&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;string&quot;&gt;&quot;fmt&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;string&quot;&gt;&quot;io/ioutil&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;const&lt;/span&gt; filename = &lt;span class=&quot;string&quot;&gt;&quot;abc.txt&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	contents, err := ioutil.ReadFile(filename)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; err != &lt;span class=&quot;literal&quot;&gt;nil&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		fmt.Println(err)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;		fmt.Printf(&lt;span class=&quot;string&quot;&gt;&quot;%s\n&quot;&lt;/span&gt;, contents)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;首先，Go语言中是可以拥有多个返回值的。其次，if 条件语句没有用 &lt;code&gt;()&lt;/code&gt; 包裹&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="从零开始Go" scheme="https://lazy-hub.com/categories/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8BGo/"/>
+    
+    
+      <category term="从零开始Go" scheme="https://lazy-hub.com/tags/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8BGo/"/>
+    
+      <category term="Go" scheme="https://lazy-hub.com/tags/Go/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TDD 构建 Laravel 应用之项目任务</title>
+    <link href="https://lazy-hub.com/2019-07-18-build-a-laravel-app-with-tdd-12.html"/>
+    <id>https://lazy-hub.com/2019-07-18-build-a-laravel-app-with-tdd-12.html</id>
+    <published>2019-07-17T23:36:28.000Z</published>
+    <updated>2019-07-23T09:13:00.267Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本系列文章为 &lt;code&gt;laracasts.com&lt;/code&gt; 的系列视频教程 ——&lt;a href=&quot;https://laracasts.com/series/build-a-laravel-app-with-tdd&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Build A Laravel App With TDD&lt;/a&gt; 的学习笔记，若喜欢该系列视频，可去该网站订阅后下载该系列视频， &lt;strong&gt;支持正版&lt;/strong&gt; 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;任务测试&quot;&gt;&lt;a href=&quot;#任务测试&quot; class=&quot;headerlink&quot; title=&quot;任务测试&quot;&gt;&lt;/a&gt;任务测试&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;提取登录方法：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;之前在项目功能测试中许多地方都使用到了：&lt;/p&gt;
+&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;$this&lt;/span&gt;-&amp;gt;actingAs(factory(&lt;span class=&quot;string&quot;&gt;&#39;App\User&#39;&lt;/span&gt;)-&amp;gt;create());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 或者&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;$this&lt;/span&gt;-&amp;gt;be(factory(&lt;span class=&quot;string&quot;&gt;&#39;App\User&#39;&lt;/span&gt;)-&amp;gt;create());&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;来表示登录用户，在任务测试中还将继续使用。所以我们可以提取这个方法，在 &lt;code&gt;TestCase.php&lt;/code&gt; 中写入如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;abstract&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;TestCase&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;BaseTestCase&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;CreatesApplication&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;protected&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;signIn&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;($user = null)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;    &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;$this&lt;/span&gt;-&amp;gt;actingAs($user ?: factory(&lt;span class=&quot;string&quot;&gt;&#39;App\User&#39;&lt;/span&gt;)-&amp;gt;create());&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="TDD 构建 Laravel 应用" scheme="https://lazy-hub.com/categories/TDD-%E6%9E%84%E5%BB%BA-Laravel-%E5%BA%94%E7%94%A8/"/>
+    
+    
+      <category term="Laravel" scheme="https://lazy-hub.com/tags/Laravel/"/>
+    
+      <category term="TDD 构建 Laravel 应用" scheme="https://lazy-hub.com/tags/TDD-%E6%9E%84%E5%BB%BA-Laravel-%E5%BA%94%E7%94%A8/"/>
+    
+      <category term="Tailwind" scheme="https://lazy-hub.com/tags/Tailwind/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TDD 构建 Laravel 应用之设计项目页面</title>
+    <link href="https://lazy-hub.com/2019-07-18-build-a-laravel-app-with-tdd-11.html"/>
+    <id>https://lazy-hub.com/2019-07-18-build-a-laravel-app-with-tdd-11.html</id>
+    <published>2019-07-17T22:02:35.000Z</published>
+    <updated>2019-07-23T09:13:00.266Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本系列文章为 &lt;code&gt;laracasts.com&lt;/code&gt; 的系列视频教程 ——&lt;a href=&quot;https://laracasts.com/series/build-a-laravel-app-with-tdd&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Build A Laravel App With TDD&lt;/a&gt; 的学习笔记，若喜欢该系列视频，可去该网站订阅后下载该系列视频， &lt;strong&gt;支持正版&lt;/strong&gt; 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;本小节都是前端优化界面的内容，大致记录下流程。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;提取卡片样式&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight scss&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;...&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.card&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    @apply .bg-white .p-5 .rounded-lg .shadow;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;~tailwindcss/utilities&quot;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="TDD 构建 Laravel 应用" scheme="https://lazy-hub.com/categories/TDD-%E6%9E%84%E5%BB%BA-Laravel-%E5%BA%94%E7%94%A8/"/>
+    
+    
+      <category term="Laravel" scheme="https://lazy-hub.com/tags/Laravel/"/>
+    
+      <category term="TDD 构建 Laravel 应用" scheme="https://lazy-hub.com/tags/TDD-%E6%9E%84%E5%BB%BA-Laravel-%E5%BA%94%E7%94%A8/"/>
+    
+      <category term="Tailwind" scheme="https://lazy-hub.com/tags/Tailwind/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TDD 构建 Laravel 应用之界面优化</title>
+    <link href="https://lazy-hub.com/2019-07-16-build-a-laravel-app-with-tdd-10.html"/>
+    <id>https://lazy-hub.com/2019-07-16-build-a-laravel-app-with-tdd-10.html</id>
+    <published>2019-07-15T22:34:53.000Z</published>
+    <updated>2019-07-23T09:13:00.265Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本系列文章为 &lt;code&gt;laracasts.com&lt;/code&gt; 的系列视频教程 ——&lt;a href=&quot;https://laracasts.com/series/build-a-laravel-app-with-tdd&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Build A Laravel App With TDD&lt;/a&gt; 的学习笔记，若喜欢该系列视频，可去该网站订阅后下载该系列视频， &lt;strong&gt;支持正版&lt;/strong&gt; 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;本小节都是前端优化界面的内容，大致记录下流程。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;编写一个 &lt;code&gt;SVG&lt;/code&gt; 的 Logo 图片，保存至 &lt;code&gt;public/images/logo.svg&lt;/code&gt;：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;svg xmlns=&amp;quot;http://www.w3.org/2000/svg&amp;quot; width=&amp;quot;291&amp;quot; height=&amp;quot;45&amp;quot; viewBox=&amp;quot;0 0 291 45&amp;quot;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;g fill=&amp;quot;none&amp;quot; fill-rule=&amp;quot;evenodd&amp;quot;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;lt;g fill=&amp;quot;#222&amp;quot;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;lt;path d=&amp;quot;M58.544 19.568c1.056 0 1.988.26 2.796.78.808.52 1.436 1.252 1.884 2.196.448.944.672 2.04.672 3.288 0 1.248-.228 2.356-.684 3.324-.456.968-1.088 1.716-1.896 2.244-.808.528-1.732.792-2.772.792-.896 0-1.692-.192-2.388-.576a3.762 3.762 0 0 1-1.572-1.608V32h-2.952V14.336h2.976v7.368a3.893 3.893 0 0 1 1.584-1.572c.688-.376 1.472-.564 2.352-.564zm-.792 10.272c.992 0 1.76-.352 2.304-1.056.544-.704.816-1.688.816-2.952 0-1.248-.272-2.212-.816-2.892-.544-.68-1.32-1.02-2.328-1.02-1.008 0-1.784.344-2.328 1.032-.544.688-.816 1.664-.816 2.928 0 1.28.272 2.26.816 2.94.544.68 1.328 1.02 2.352 1.02zm8.76 2.16V19.88h2.976V32h-2.976zm-.192-17.616h3.336v2.952H66.32v-2.952zm12.984 5.208c.464 0 .864.064 1.2.192l-.024 2.736a4.171 4.171 0 0 0-1.584-.312c-1.024 0-1.804.296-2.34.888-.536.592-.804 1.376-.804 2.352V32h-2.976v-8.688c0-1.28-.064-2.424-.192-3.432h2.808l.24 2.136c.304-.784.784-1.384 1.44-1.8.656-.416 1.4-.624 2.232-.624zm14.232-5.256V32h-2.952v-1.944A3.893 3.893 0 0 1 89 31.628c-.688.376-1.472.564-2.352.564-1.04 0-1.968-.264-2.784-.792-.816-.528-1.452-1.276-1.908-2.244-.456-.968-.684-2.076-.684-3.324 0-1.248.224-2.344.672-3.288.448-.944 1.08-1.676 1.896-2.196.816-.52 1.752-.78 2.808-.78.864 0 1.636.18 2.316.54a3.8 3.8 0 0 1 1.572 1.524v-7.296h3zM87.44 29.84c.992 0 1.764-.344 2.316-1.032.552-.688.828-1.664.828-2.928s-.272-2.24-.816-2.928c-.544-.688-1.312-1.032-2.304-1.032-1.008 0-1.788.34-2.34 1.02-.552.68-.828 1.644-.828 2.892 0 1.264.276 2.248.828 2.952.552.704 1.324 1.056 2.316 1.056zm16.272-10.272c1.056 0 1.988.26 2.796.78.808.52 1.436 1.252 1.884 2.196.448.944.672 2.04.672 3.288 0 1.248-.228 2.356-.684 3.324-.456.968-1.088 1.716-1.896 2.244-.808.528-1.732.792-2.772.792-.896 0-1.692-.192-2.388-.576a3.762 3.762 0 0 1-1.572-1.608V32H96.8V14.336h2.976v7.368a3.893 3.893 0 0 1 1.584-1.572c.688-.376 1.472-.564 2.352-.564zm-.792 10.272c.992 0 1.76-.352 2.304-1.056.544-.704.816-1.688.816-2.952 0-1.248-.272-2.212-.816-2.892-.544-.68-1.32-1.02-2.328-1.02-1.008 0-1.784.344-2.328 1.032-.544.688-.816 1.664-.816 2.928 0 1.28.272 2.26.816 2.94.544.68 1.328 1.02 2.352 1.02zm14.256 2.352c-1.232 0-2.316-.256-3.252-.768a5.245 5.245 0 0 1-2.16-2.196c-.504-.952-.756-2.068-.756-3.348 0-1.28.252-2.396.756-3.348a5.245 5.245 0 0 1 2.16-2.196c.936-.512 2.02-.768 3.252-.768 1.216 0 2.288.256 3.216.768a5.264 5.264 0 0 1 2.148 2.196c.504.952.756 2.068.756 3.348 0 1.28-.252 2.396-.756 3.348a5.264 5.264 0 0 1-2.148 2.196c-.928.512-2 .768-3.216.768zm-.024-2.352c1.024 0 1.804-.332 2.34-.996.536-.664.804-1.652.804-2.964 0-1.296-.272-2.284-.816-2.964-.544-.68-1.312-1.02-2.304-1.02-1.008 0-1.784.34-2.328 1.02-.544.68-.816 1.668-.816 2.964 0 1.312.268 2.3.804 2.964.536.664 1.308.996 2.316.996zm20.328-9.96V32h-2.952v-1.944a3.893 3.893 0 0 1-1.584 1.572c-.688.376-1.472.564-2.352.564-1.056 0-1.992-.256-2.808-.768-.816-.512-1.448-1.24-1.896-2.184-.448-.944-.672-2.04-.672-3.288 0-1.248.228-2.356.684-3.324.456-.968 1.092-1.72 1.908-2.256.816-.536 1.744-.804 2.784-.804.88 0 1.664.188 2.352.564.688.376 1.216.9 1.584 1.572V19.88h2.952zm-6.072 9.96c.992 0 1.76-.344 2.304-1.032.544-.688.816-1.656.816-2.904 0-1.28-.272-2.264-.816-2.952-.544-.688-1.32-1.032-2.328-1.032-.992 0-1.764.356-2.316 1.068-.552.712-.828 1.7-.828 2.964 0 1.248.276 2.208.828 2.88.552.672 1.332 1.008 2.34 1.008zm15.864-10.248c.464 0 .864.064 1.2.192l-.024 2.736a4.171 4.171 0 0 0-1.584-.312c-1.024 0-1.804.296-2.34.888-.536.592-.804 1.376-.804 2.352V32h-2.976v-8.688c0-1.28-.064-2.424-.192-3.432h2.808l.24 2.136c.304-.784.784-1.384 1.44-1.8.656-.416 1.4-.624 2.232-.624zm14.232-5.256V32h-2.952v-1.944a3.893 3.893 0 0 1-1.584 1.572c-.688.376-1.472.564-2.352.564-1.04 0-1.968-.264-2.784-.792-.816-.528-1.452-1.276-1.908-2.244-.456-.968-.684-2.076-.684-3.324 0-1.248.224-2.344.672-3.288.448-.944 1.08-1.676 1.896-2.196.816-.52 1.752-.78 2.808-.78.864 0 1.636.18 2.316.54a3.8 3.8 0 0 1 1.572 1.524v-7.296h3zm-6.096 15.504c.992 0 1.764-.344 2.316-1.032.552-.688.828-1.664.828-2.928s-.272-2.24-.816-2.928c-.544-.688-1.312-1.032-2.304-1.032-1.008 0-1.788.34-2.34 1.02-.552.68-.828 1.644-.828 2.892 0 1.264.276 2.248.828 2.952.552.704 1.324 1.056 2.316 1.056z&amp;quot;/&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;lt;text font-family=&amp;quot;Helvetica&amp;quot; font-size=&amp;quot;12&amp;quot; transform=&amp;quot;translate(51 14)&amp;quot;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &amp;lt;tspan x=&amp;quot;120.117&amp;quot; y=&amp;quot;14&amp;quot;&amp;gt; feathery reminders&amp;lt;/tspan&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;lt;/text&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;lt;/g&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;lt;path stroke=&amp;quot;#222&amp;quot; stroke-opacity=&amp;quot;.218&amp;quot; stroke-width=&amp;quot;.5&amp;quot; d=&amp;quot;M12.454 37L9 39.784l6.598.852L12.299 43 26 40.636&amp;quot;/&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;lt;path fill=&amp;quot;#47D5FE&amp;quot; d=&amp;quot;M42.273 4C27.487 4 15.326 15.078 14.037 29.157c2.457-3.374 5.466-6.621 9.223-10.354a.738.738 0 0 1 1.029-.01c.286.273.29.722.01 1.001a169.806 169.806 0 0 0-2.688 2.732l-.175.184c-4.643 4.842-7.962 9.057-10.372 14.291a.702.702 0 0 0 .365.937.74.74 0 0 0 .963-.356 38.585 38.585 0 0 1 2.974-5.273c10.159-.253 19.406-5.757 24.252-14.515a.696.696 0 0 0-.016-.7.737.737 0 0 0-.625-.344h-2.694l4.83-2.689a.714.714 0 0 0 .328-.384A26.88 26.88 0 0 0 43 4.708.718.718 0 0 0 42.273 4z&amp;quot;/&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;/g&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;/svg&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="TDD 构建 Laravel 应用" scheme="https://lazy-hub.com/categories/TDD-%E6%9E%84%E5%BB%BA-Laravel-%E5%BA%94%E7%94%A8/"/>
+    
+    
+      <category term="Laravel" scheme="https://lazy-hub.com/tags/Laravel/"/>
+    
+      <category term="TDD 构建 Laravel 应用" scheme="https://lazy-hub.com/tags/TDD-%E6%9E%84%E5%BB%BA-Laravel-%E5%BA%94%E7%94%A8/"/>
+    
+      <category term="Tailwind" scheme="https://lazy-hub.com/tags/Tailwind/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TDD 构建 Laravel 应用之利用 Tailwind 构建 UI</title>
+    <link href="https://lazy-hub.com/2019-07-15-build-a-laravel-app-with-tdd-09.html"/>
+    <id>https://lazy-hub.com/2019-07-15-build-a-laravel-app-with-tdd-09.html</id>
+    <published>2019-07-14T22:56:39.000Z</published>
+    <updated>2019-07-23T09:13:00.263Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本系列文章为 &lt;code&gt;laracasts.com&lt;/code&gt; 的系列视频教程 ——&lt;a href=&quot;https://laracasts.com/series/build-a-laravel-app-with-tdd&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Build A Laravel App With TDD&lt;/a&gt; 的学习笔记，若喜欢该系列视频，可去该网站订阅后下载该系列视频， &lt;strong&gt;支持正版&lt;/strong&gt; 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;由于使用的 &lt;code&gt;Tailwind&lt;/code&gt; 版本不一致，本节笔记和视频稍有出入。&lt;/p&gt;
+&lt;p&gt;首先在 &lt;code&gt;app.scss&lt;/code&gt; 中删除 &lt;code&gt;bootstrap&lt;/code&gt; 依赖，然后执行&lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm run watch&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;然后在 &lt;code&gt;tailwind.config.js&lt;/code&gt; 中输入如下配置：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="TDD 构建 Laravel 应用" scheme="https://lazy-hub.com/categories/TDD-%E6%9E%84%E5%BB%BA-Laravel-%E5%BA%94%E7%94%A8/"/>
+    
+    
+      <category term="Laravel" scheme="https://lazy-hub.com/tags/Laravel/"/>
+    
+      <category term="TDD 构建 Laravel 应用" scheme="https://lazy-hub.com/tags/TDD-%E6%9E%84%E5%BB%BA-Laravel-%E5%BA%94%E7%94%A8/"/>
+    
+      <category term="Tailwind" scheme="https://lazy-hub.com/tags/Tailwind/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TDD 构建 Laravel 应用之前端预设</title>
+    <link href="https://lazy-hub.com/2019-07-14-build-a-laravel-app-with-tdd-08.html"/>
+    <id>https://lazy-hub.com/2019-07-14-build-a-laravel-app-with-tdd-08.html</id>
+    <published>2019-07-14T12:46:18.000Z</published>
+    <updated>2019-07-23T09:13:00.262Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本系列文章为 &lt;code&gt;laracasts.com&lt;/code&gt; 的系列视频教程 ——&lt;a href=&quot;https://laracasts.com/series/build-a-laravel-app-with-tdd&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Build A Laravel App With TDD&lt;/a&gt; 的学习笔记，若喜欢该系列视频，可去该网站订阅后下载该系列视频， &lt;strong&gt;支持正版&lt;/strong&gt; 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;利用已有的布局界面重构页面&quot;&gt;&lt;a href=&quot;#利用已有的布局界面重构页面&quot; class=&quot;headerlink&quot; title=&quot;利用已有的布局界面重构页面&quot;&gt;&lt;/a&gt;利用已有的布局界面重构页面&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;修改项目列表页：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;code&gt;resources/views/projects/index.blade.php&lt;/code&gt;&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;@extends(&amp;apos;layouts.app&amp;apos;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@section(&amp;apos;content&amp;apos;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;div style=&amp;quot;display: flex;align-items: center&amp;quot;&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;lt;h1 style=&amp;quot;margin-right: auto&amp;quot;&amp;gt;Birdboard&amp;lt;/h1&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &amp;lt;a href=&amp;quot;/projects/create&amp;quot;&amp;gt;New Project&amp;lt;/a&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;/div&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;ul&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        @forelse($projects as $project)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;lt;li&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;                &amp;lt;a href=&amp;quot;&amp;#123;&amp;#123; $project-&amp;gt;path() &amp;#125;&amp;#125;&amp;quot;&amp;gt;&amp;#123;&amp;#123; $project-&amp;gt;title &amp;#125;&amp;#125;&amp;lt;/a&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;lt;/li&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        @empty&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &amp;lt;li&amp;gt;No project yet.&amp;lt;/li&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        @endforelse&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;lt;/ul&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;@endsection&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="TDD 构建 Laravel 应用" scheme="https://lazy-hub.com/categories/TDD-%E6%9E%84%E5%BB%BA-Laravel-%E5%BA%94%E7%94%A8/"/>
+    
+    
+      <category term="Laravel" scheme="https://lazy-hub.com/tags/Laravel/"/>
+    
+      <category term="TDD 构建 Laravel 应用" scheme="https://lazy-hub.com/tags/TDD-%E6%9E%84%E5%BB%BA-Laravel-%E5%BA%94%E7%94%A8/"/>
+    
+      <category term="Tailwind" scheme="https://lazy-hub.com/tags/Tailwind/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TDD 构建 Laravel 应用之创建项目视图</title>
+    <link href="https://lazy-hub.com/2019-07-02-build-a-laravel-app-with-tdd-07.html"/>
+    <id>https://lazy-hub.com/2019-07-02-build-a-laravel-app-with-tdd-07.html</id>
+    <published>2019-07-01T23:20:53.000Z</published>
+    <updated>2019-07-23T09:13:00.261Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本系列文章为 &lt;code&gt;laracasts.com&lt;/code&gt; 的系列视频教程 ——&lt;a href=&quot;https://laracasts.com/series/build-a-laravel-app-with-tdd&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Build A Laravel App With TDD&lt;/a&gt; 的学习笔记，若喜欢该系列视频，可去该网站订阅后下载该系列视频， &lt;strong&gt;支持正版&lt;/strong&gt; 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;游客无法操作项目&quot;&gt;&lt;a href=&quot;#游客无法操作项目&quot; class=&quot;headerlink&quot; title=&quot;游客无法操作项目&quot;&gt;&lt;/a&gt;游客无法操作项目&lt;/h2&gt;&lt;p&gt;之前的很多测试都是在用户登录的状态下写的测试用例，现在我们来写一份游客相关的测试：&lt;/p&gt;
+&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/** &lt;span class=&quot;doctag&quot;&gt;@test&lt;/span&gt; */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;guests_cannot_manage_projects&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  $project = factory(&lt;span class=&quot;string&quot;&gt;&#39;App\Project&#39;&lt;/span&gt;)-&amp;gt;create();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;$this&lt;/span&gt;-&amp;gt;get(&lt;span class=&quot;string&quot;&gt;&#39;/projects&#39;&lt;/span&gt;)-&amp;gt;assertRedirect(&lt;span class=&quot;string&quot;&gt;&#39;login&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;$this&lt;/span&gt;-&amp;gt;get($project-&amp;gt;path())-&amp;gt;assertRedirect(&lt;span class=&quot;string&quot;&gt;&#39;login&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;$this&lt;/span&gt;-&amp;gt;post(&lt;span class=&quot;string&quot;&gt;&#39;/projects&#39;&lt;/span&gt;, $project-&amp;gt;toArray())-&amp;gt;assertRedirect(&lt;span class=&quot;string&quot;&gt;&#39;login&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;运行测试成功！&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="TDD 构建 Laravel 应用" scheme="https://lazy-hub.com/categories/TDD-%E6%9E%84%E5%BB%BA-Laravel-%E5%BA%94%E7%94%A8/"/>
+    
+    
+      <category term="Laravel" scheme="https://lazy-hub.com/tags/Laravel/"/>
+    
+      <category term="TDD 构建 Laravel 应用" scheme="https://lazy-hub.com/tags/TDD-%E6%9E%84%E5%BB%BA-Laravel-%E5%BA%94%E7%94%A8/"/>
+    
+      <category term="TDD" scheme="https://lazy-hub.com/tags/TDD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TDD 构建 Laravel 应用之项目范围界定</title>
+    <link href="https://lazy-hub.com/2019-06-29-build-a-laravel-app-with-tdd-06.html"/>
+    <id>https://lazy-hub.com/2019-06-29-build-a-laravel-app-with-tdd-06.html</id>
+    <published>2019-06-29T08:17:20.000Z</published>
+    <updated>2019-07-23T09:13:00.260Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本系列文章为 &lt;code&gt;laracasts.com&lt;/code&gt; 的系列视频教程 ——&lt;a href=&quot;https://laracasts.com/series/build-a-laravel-app-with-tdd&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Build A Laravel App With TDD&lt;/a&gt; 的学习笔记，若喜欢该系列视频，可去该网站订阅后下载该系列视频， &lt;strong&gt;支持正版&lt;/strong&gt; 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;之前的项目列表是显示所有项目，在加入所有者之后，应该显示当前用户的项目比较合适。让我们来修改相关的代码：&lt;/p&gt;
+&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 控制器&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  $projects = auth()-&amp;gt;user()-&amp;gt;projects;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; view(&lt;span class=&quot;string&quot;&gt;&#39;projects.index&#39;&lt;/span&gt;, compact(&lt;span class=&quot;string&quot;&gt;&#39;projects&#39;&lt;/span&gt;));&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 路由文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Route::get(&lt;span class=&quot;string&quot;&gt;&#39;/projects&#39;&lt;/span&gt;, &lt;span class=&quot;string&quot;&gt;&#39;ProjectsController@index&#39;&lt;/span&gt;)-&amp;gt;middleware(&lt;span class=&quot;string&quot;&gt;&#39;auth&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;打开 &lt;code&gt;http://birdboard.test/projects&lt;/code&gt; ，测试需要登录，注册登录后，显示 &lt;code&gt;No project yet.&lt;/code&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="TDD 构建 Laravel 应用" scheme="https://lazy-hub.com/categories/TDD-%E6%9E%84%E5%BB%BA-Laravel-%E5%BA%94%E7%94%A8/"/>
+    
+    
+      <category term="Laravel" scheme="https://lazy-hub.com/tags/Laravel/"/>
+    
+      <category term="TDD 构建 Laravel 应用" scheme="https://lazy-hub.com/tags/TDD-%E6%9E%84%E5%BB%BA-Laravel-%E5%BA%94%E7%94%A8/"/>
+    
+      <category term="TDD" scheme="https://lazy-hub.com/tags/TDD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TDD 构建 Laravel 应用之项目所有者</title>
+    <link href="https://lazy-hub.com/2019-06-29-build-a-laravel-app-with-tdd-05.html"/>
+    <id>https://lazy-hub.com/2019-06-29-build-a-laravel-app-with-tdd-05.html</id>
+    <published>2019-06-28T23:11:20.000Z</published>
+    <updated>2019-07-23T09:13:00.259Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本系列文章为 &lt;code&gt;laracasts.com&lt;/code&gt; 的系列视频教程 ——&lt;a href=&quot;https://laracasts.com/series/build-a-laravel-app-with-tdd&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Build A Laravel App With TDD&lt;/a&gt; 的学习笔记，若喜欢该系列视频，可去该网站订阅后下载该系列视频， &lt;strong&gt;支持正版&lt;/strong&gt; 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;现在我们虽然可以创建项目了，但是和用户没有任何关系，为了解决这个问题，我们将编写一个测试来确认经过身份验证的用户始终被指定为在其会话期间创建的任何新项目的所有者。&lt;/p&gt;
+&lt;h2 id=&quot;项目需要一个所有者&quot;&gt;&lt;a href=&quot;#项目需要一个所有者&quot; class=&quot;headerlink&quot; title=&quot;项目需要一个所有者&quot;&gt;&lt;/a&gt;项目需要一个所有者&lt;/h2&gt;&lt;p&gt;编写一个功能测试：&lt;/p&gt;
+&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/** &lt;span class=&quot;doctag&quot;&gt;@test&lt;/span&gt; */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;a_project_requires_an_owner&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  $attributes = factory(&lt;span class=&quot;string&quot;&gt;&#39;App\Project&#39;&lt;/span&gt;)-&amp;gt;raw();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;$this&lt;/span&gt;-&amp;gt;post(&lt;span class=&quot;string&quot;&gt;&#39;/projects&#39;&lt;/span&gt;, $attributes)-&amp;gt;assertSessionHasErrors(&lt;span class=&quot;string&quot;&gt;&#39;owner&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;运行测试，报错：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There was 1 failure:&lt;/p&gt;
+&lt;p&gt;1) Tests\Feature\ProjectsTest::a_project_requires_an_owner&lt;br&gt;Session is missing expected key [errors].&lt;br&gt;Failed asserting that false is true.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;OK，这完全是因为我们的表结构没有关于任何用户相关的字段。修改下 &lt;code&gt;projects&lt;/code&gt; 表文件：&lt;/p&gt;
+&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;up&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Schema::create(&lt;span class=&quot;string&quot;&gt;&#39;projects&#39;&lt;/span&gt;, &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;params&quot;&gt;(Blueprint $table)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    $table-&amp;gt;bigIncrements(&lt;span class=&quot;string&quot;&gt;&#39;id&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    $table-&amp;gt;unsignedBigInteger(&lt;span class=&quot;string&quot;&gt;&#39;owner_id&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    $table-&amp;gt;string(&lt;span class=&quot;string&quot;&gt;&#39;title&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    $table-&amp;gt;text(&lt;span class=&quot;string&quot;&gt;&#39;description&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    $table-&amp;gt;timestamps();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  $table-&amp;gt;foreign(&lt;span class=&quot;string&quot;&gt;&#39;owner_id&#39;&lt;/span&gt;)-&amp;gt;references(&lt;span class=&quot;string&quot;&gt;&#39;id&#39;&lt;/span&gt;)-&amp;gt;on(&lt;span class=&quot;string&quot;&gt;&#39;users&#39;&lt;/span&gt;)-&amp;gt;onDelete(&lt;span class=&quot;string&quot;&gt;&#39;cascade&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;重置迁移文件：&lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;php artisan migrate:refresh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="TDD 构建 Laravel 应用" scheme="https://lazy-hub.com/categories/TDD-%E6%9E%84%E5%BB%BA-Laravel-%E5%BA%94%E7%94%A8/"/>
+    
+    
+      <category term="Laravel" scheme="https://lazy-hub.com/tags/Laravel/"/>
+    
+      <category term="TDD 构建 Laravel 应用" scheme="https://lazy-hub.com/tags/TDD-%E6%9E%84%E5%BB%BA-Laravel-%E5%BA%94%E7%94%A8/"/>
+    
+      <category term="TDD" scheme="https://lazy-hub.com/tags/TDD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TDD 构建 Laravel 应用之模型测试</title>
+    <link href="https://lazy-hub.com/2019-06-20-build-a-laravel-app-with-tdd-04.html"/>
+    <id>https://lazy-hub.com/2019-06-20-build-a-laravel-app-with-tdd-04.html</id>
+    <published>2019-06-19T23:36:25.000Z</published>
+    <updated>2019-07-23T09:13:00.257Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本系列文章为 &lt;code&gt;laracasts.com&lt;/code&gt; 的系列视频教程 ——&lt;a href=&quot;https://laracasts.com/series/build-a-laravel-app-with-tdd&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Build A Laravel App With TDD&lt;/a&gt; 的学习笔记，若喜欢该系列视频，可去该网站订阅后下载该系列视频， &lt;strong&gt;支持正版&lt;/strong&gt; 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;测试用户查看一个项目的权限&quot;&gt;&lt;a href=&quot;#测试用户查看一个项目的权限&quot; class=&quot;headerlink&quot; title=&quot;测试用户查看一个项目的权限&quot;&gt;&lt;/a&gt;测试用户查看一个项目的权限&lt;/h2&gt;&lt;p&gt;用户查看某个项目详情，应该可以看见&lt;code&gt;标题&lt;/code&gt;与&lt;code&gt;描述&lt;/code&gt;，于是我们开始编写测试方法：&lt;/p&gt;
+&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/** &lt;span class=&quot;doctag&quot;&gt;@test&lt;/span&gt; */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;a_user_can_view_a_project&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  $project = factory(&lt;span class=&quot;string&quot;&gt;&#39;App\Project&#39;&lt;/span&gt;)-&amp;gt;create();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;$this&lt;/span&gt;-&amp;gt;get(&lt;span class=&quot;string&quot;&gt;&#39;/projects/&#39;&lt;/span&gt; . $project-&amp;gt;id)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    -&amp;gt;assertSee($project-&amp;gt;title)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    -&amp;gt;assertSee($project-&amp;gt;description);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;运行测试：&lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pf ProjectsTest&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="TDD 构建 Laravel 应用" scheme="https://lazy-hub.com/categories/TDD-%E6%9E%84%E5%BB%BA-Laravel-%E5%BA%94%E7%94%A8/"/>
+    
+    
+      <category term="Laravel" scheme="https://lazy-hub.com/tags/Laravel/"/>
+    
+      <category term="TDD 构建 Laravel 应用" scheme="https://lazy-hub.com/tags/TDD-%E6%9E%84%E5%BB%BA-Laravel-%E5%BA%94%E7%94%A8/"/>
+    
+      <category term="TDD" scheme="https://lazy-hub.com/tags/TDD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TDD 构建 Laravel 应用之测试请求验证</title>
+    <link href="https://lazy-hub.com/2019-06-19-build-a-laravel-app-with-tdd-03.html"/>
+    <id>https://lazy-hub.com/2019-06-19-build-a-laravel-app-with-tdd-03.html</id>
+    <published>2019-06-19T13:00:01.000Z</published>
+    <updated>2019-06-20T02:41:44.893Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本系列文章为 &lt;code&gt;laracasts.com&lt;/code&gt; 的系列视频教程 ——&lt;a href=&quot;https://laracasts.com/series/build-a-laravel-app-with-tdd&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Build A Laravel App With TDD&lt;/a&gt; 的学习笔记，若喜欢该系列视频，可去该网站订阅后下载该系列视频， &lt;strong&gt;支持正版&lt;/strong&gt; 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;上一小节保存数据之前没有验证数据完整性，这一小节主要测试请求数据合法性。&lt;/p&gt;
+&lt;h2 id=&quot;编写一个验证-标题-的功能测试：&quot;&gt;&lt;a href=&quot;#编写一个验证-标题-的功能测试：&quot; class=&quot;headerlink&quot; title=&quot;编写一个验证 标题 的功能测试：&quot;&gt;&lt;/a&gt;编写一个验证 &lt;code&gt;标题&lt;/code&gt; 的功能测试：&lt;/h2&gt;&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;/** &lt;span class=&quot;doctag&quot;&gt;@test&lt;/span&gt; */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;a_project_requires_title&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;$this&lt;/span&gt;-&amp;gt;post(&lt;span class=&quot;string&quot;&gt;&#39;/projects&#39;&lt;/span&gt;, [])-&amp;gt;assertSessionHasErrors(&lt;span class=&quot;string&quot;&gt;&#39;title&#39;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;ul&gt;
+&lt;li&gt;测试该方法：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;vendor/bin/phpunit --filter a_project_requires_title&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="TDD 构建 Laravel 应用" scheme="https://lazy-hub.com/categories/TDD-%E6%9E%84%E5%BB%BA-Laravel-%E5%BA%94%E7%94%A8/"/>
+    
+    
+      <category term="Laravel" scheme="https://lazy-hub.com/tags/Laravel/"/>
+    
+      <category term="TDD 构建 Laravel 应用" scheme="https://lazy-hub.com/tags/TDD-%E6%9E%84%E5%BB%BA-Laravel-%E5%BA%94%E7%94%A8/"/>
+    
+      <category term="TDD" scheme="https://lazy-hub.com/tags/TDD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TDD 构建 Laravel 应用之从测试开始</title>
+    <link href="https://lazy-hub.com/2019-06-19-build-a-laravel-app-with-tdd-02.html"/>
+    <id>https://lazy-hub.com/2019-06-19-build-a-laravel-app-with-tdd-02.html</id>
+    <published>2019-06-18T22:57:42.000Z</published>
+    <updated>2019-07-04T08:39:16.036Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本系列文章为 &lt;code&gt;laracasts.com&lt;/code&gt; 的系列视频教程 ——&lt;a href=&quot;https://laracasts.com/series/build-a-laravel-app-with-tdd&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Build A Laravel App With TDD&lt;/a&gt; 的学习笔记，若喜欢该系列视频，可去该网站订阅后下载该系列视频， &lt;strong&gt;支持正版&lt;/strong&gt; 。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;开始-Project-的功能测试&quot;&gt;&lt;a href=&quot;#开始-Project-的功能测试&quot; class=&quot;headerlink&quot; title=&quot;开始 Project 的功能测试&quot;&gt;&lt;/a&gt;开始 Project 的功能测试&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;生成功能测试文件：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;php artisan make:test ProjectsTest&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;在 &lt;code&gt;tests\Feature&lt;/code&gt;目录中可以找到该文件&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;开始第一个功能测试：用户创建项目&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight php&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;26&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;&amp;lt;?php&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;namespace&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Tests&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;Feature&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Tests&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;TestCase&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Illuminate&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;Foundation&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;Testing&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;WithFaker&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;Illuminate&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;Foundation&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;Testing&lt;/span&gt;\&lt;span class=&quot;title&quot;&gt;RefreshDatabase&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;ProjectsTest&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;TestCase&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;class&quot;&gt;&lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;WithFaker&lt;/span&gt;, &lt;span class=&quot;title&quot;&gt;RefreshDatabase&lt;/span&gt;;  &lt;span class=&quot;comment&quot;&gt;//生成假数据, 每次测试后重置数据库&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;/** &lt;span class=&quot;doctag&quot;&gt;@test&lt;/span&gt; */&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;a_user_can_create_a_project&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;    &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;$this&lt;/span&gt;-&amp;gt;withoutExceptionHandling();&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        $attributes = [&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;title&#39;&lt;/span&gt; =&amp;gt; &lt;span class=&quot;keyword&quot;&gt;$this&lt;/span&gt;-&amp;gt;faker-&amp;gt;sentence,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;            &lt;span class=&quot;string&quot;&gt;&#39;description&#39;&lt;/span&gt; =&amp;gt; &lt;span class=&quot;keyword&quot;&gt;$this&lt;/span&gt;-&amp;gt;faker-&amp;gt;paragraph&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        ];&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;$this&lt;/span&gt;-&amp;gt;post(&lt;span class=&quot;string&quot;&gt;&#39;/projects&#39;&lt;/span&gt;, $attributes);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;comment&quot;&gt;// 断言数据库中的数据是否和给定数据集合匹配&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        &lt;span class=&quot;keyword&quot;&gt;$this&lt;/span&gt;-&amp;gt;assertDatabaseHas(&lt;span class=&quot;string&quot;&gt;&#39;projects&#39;&lt;/span&gt;, $attributes);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;运行测试：&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="TDD 构建 Laravel 应用" scheme="https://lazy-hub.com/categories/TDD-%E6%9E%84%E5%BB%BA-Laravel-%E5%BA%94%E7%94%A8/"/>
+    
+    
+      <category term="Laravel" scheme="https://lazy-hub.com/tags/Laravel/"/>
+    
+      <category term="TDD 构建 Laravel 应用" scheme="https://lazy-hub.com/tags/TDD-%E6%9E%84%E5%BB%BA-Laravel-%E5%BA%94%E7%94%A8/"/>
+    
+      <category term="TDD" scheme="https://lazy-hub.com/tags/TDD/"/>
+    
+  </entry>
   
   <entry>
     <title>TDD 构建 Laravel 应用之遇见 Birdboard</title>
@@ -111,7 +607,7 @@
     <link href="https://lazy-hub.com/2019-06-08-Go_From_Scratch_3.html"/>
     <id>https://lazy-hub.com/2019-06-08-Go_From_Scratch_3.html</id>
     <published>2019-06-08T02:14:57.000Z</published>
-    <updated>2019-06-11T03:03:44.460Z</updated>
+    <updated>2019-07-23T09:13:00.269Z</updated>
     
     <summary type="html">
     
@@ -144,592 +640,6 @@
       <category term="从零开始Go" scheme="https://lazy-hub.com/tags/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8BGo/"/>
     
       <category term="Go" scheme="https://lazy-hub.com/tags/Go/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>从零开始Go之变量类型与类型转换</title>
-    <link href="https://lazy-hub.com/2019-06-08-Go_From_Scratch_2.html"/>
-    <id>https://lazy-hub.com/2019-06-08-Go_From_Scratch_2.html</id>
-    <published>2019-06-08T01:41:31.000Z</published>
-    <updated>2019-06-11T03:03:44.460Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;内置变量类型&quot;&gt;&lt;a href=&quot;#内置变量类型&quot; class=&quot;headerlink&quot; title=&quot;内置变量类型&quot;&gt;&lt;/a&gt;内置变量类型&lt;/h2&gt;&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&quot;center&quot;&gt;类别&lt;/th&gt;
-&lt;th align=&quot;left&quot;&gt;类型与描述&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;&lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;整型&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;uint8&lt;/strong&gt; &lt;br&gt;无符号 8 位整型 (0 到 255)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;整型&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;uint16&lt;/strong&gt; &lt;br&gt;无符号 16 位整型 (0 到 65535)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;整型&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;uint32&lt;/strong&gt; &lt;br&gt;无符号 32 位整型 (0 到 4294967295)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;整型&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;uint64&lt;/strong&gt; &lt;br&gt;无符号 64 位整型 (0 到 18446744073709551615)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;整型&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;int8&lt;/strong&gt; &lt;br&gt;有符号 8 位整型 (-128 到 127)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;整型&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;int16&lt;/strong&gt; &lt;br&gt;有符号 16 位整型 (-32768 到 32767)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;整型&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;int32&lt;/strong&gt; &lt;br&gt;有符号 32 位整型 (-2147483648 到 2147483647)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;整型&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;int64&lt;/strong&gt; &lt;br&gt;有符号 64 位整型 (-9223372036854775808 到 9223372036854775807)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;整型&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;byte&lt;/strong&gt; &lt;br&gt;类似 uint8&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;整型&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;rune&lt;/strong&gt; &lt;br&gt;类似 int32 是支持utf8的char类型&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;整型&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;uint&lt;/strong&gt;&lt;br&gt; 32 或 64 位&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;整型&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;int&lt;/strong&gt;&lt;br&gt;与 uint 一样大小&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;整型&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;uintptr&lt;/strong&gt; 无符号整型，用于存放一个指针&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;浮点&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;float32&lt;/strong&gt;&lt;br&gt;IEEE-754 32位浮点型数&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;浮点&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;float64&lt;/strong&gt;&lt;br&gt;IEEE-754 64位浮点型数&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;浮点&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;complex64&lt;/strong&gt;&lt;br&gt;32 位实数和虚数&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;浮点&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;complex128&lt;/strong&gt;&lt;br&gt;64 位实数和虚数&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;布尔&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;bool&lt;/strong&gt; true 或 false&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&quot;center&quot;&gt;字符串&lt;/td&gt;
-&lt;td align=&quot;left&quot;&gt;&lt;strong&gt;string&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-    
-    </summary>
-    
-      <category term="从零开始Go" scheme="https://lazy-hub.com/categories/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8BGo/"/>
-    
-    
-      <category term="从零开始Go" scheme="https://lazy-hub.com/tags/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8BGo/"/>
-    
-      <category term="Go" scheme="https://lazy-hub.com/tags/Go/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>从零开始Go之变量定义</title>
-    <link href="https://lazy-hub.com/2019-06-08-Go_From_Scratch_1.html"/>
-    <id>https://lazy-hub.com/2019-06-08-Go_From_Scratch_1.html</id>
-    <published>2019-06-08T00:58:53.000Z</published>
-    <updated>2019-06-11T03:03:44.460Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Golang 在定义变量时，与大多数主流语言不同，先定义变量名，再定义变量类型。&lt;/p&gt;
-&lt;h2 id=&quot;变量默认初始值&quot;&gt;&lt;a href=&quot;#变量默认初始值&quot; class=&quot;headerlink&quot; title=&quot;变量默认初始值&quot;&gt;&lt;/a&gt;变量默认初始值&lt;/h2&gt;&lt;p&gt;Go语言定义变量后都有一个合理的初始值&lt;/p&gt;
-&lt;figure class=&quot;highlight go&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;package&lt;/span&gt; main&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;fmt&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt;&lt;/span&gt;  &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a &lt;span class=&quot;keyword&quot;&gt;int&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; s &lt;span class=&quot;keyword&quot;&gt;string&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	fmt.Printf(&lt;span class=&quot;string&quot;&gt;&quot;%d %q\n&quot;&lt;/span&gt;,a, s)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;输出结果：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;0 &amp;quot;&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="从零开始Go" scheme="https://lazy-hub.com/categories/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8BGo/"/>
-    
-    
-      <category term="从零开始Go" scheme="https://lazy-hub.com/tags/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8BGo/"/>
-    
-      <category term="Go" scheme="https://lazy-hub.com/tags/Go/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringBoot学习之日志的使用与配置</title>
-    <link href="https://lazy-hub.com/2019-06-01-SpringBoot-Log.html"/>
-    <id>https://lazy-hub.com/2019-06-01-SpringBoot-Log.html</id>
-    <published>2019-06-01T03:07:16.000Z</published>
-    <updated>2019-06-11T03:03:44.458Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;基本使用&quot;&gt;&lt;a href=&quot;#基本使用&quot; class=&quot;headerlink&quot; title=&quot;基本使用&quot;&gt;&lt;/a&gt;基本使用&lt;/h2&gt;&lt;p&gt;利用 SpringBoot 内置的 &lt;code&gt;slf4j&lt;/code&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;最基础的使用:&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;23&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;package&lt;/span&gt; com.lazy.sell;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.junit.Test;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.junit.runner.RunWith;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.slf4j.Logger;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.slf4j.LoggerFactory;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.springframework.boot.test.context.SpringBootTest;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;import&lt;/span&gt; org.springframework.test.context.junit4.SpringRunner;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@RunWith&lt;/span&gt;(SpringRunner.class)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;@SpringBootTest&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;class&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;LoggerTest&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// getLogger 载入当前类名&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;private&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;final&lt;/span&gt; Logger logger = LoggerFactory.getLogger(LoggerTest.class);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;meta&quot;&gt;@Test&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;test1&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;()&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        logger.debug(&lt;span class=&quot;string&quot;&gt;&quot;debug...&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        logger.info(&lt;span class=&quot;string&quot;&gt;&quot;info...&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;        logger.error(&lt;span class=&quot;string&quot;&gt;&quot;error...&quot;&lt;/span&gt;);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="SpringBoot学习之旅" scheme="https://lazy-hub.com/categories/SpringBoot%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%97%85/"/>
-    
-    
-      <category term="SpringBoot" scheme="https://lazy-hub.com/tags/SpringBoot/"/>
-    
-      <category term="slf4j" scheme="https://lazy-hub.com/tags/slf4j/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>记一次部署bug</title>
-    <link href="https://lazy-hub.com/2019-05-03-Deploy-Bug-About-htaccess.html"/>
-    <id>https://lazy-hub.com/2019-05-03-Deploy-Bug-About-htaccess.html</id>
-    <published>2019-05-03T05:46:35.000Z</published>
-    <updated>2019-06-11T03:03:44.461Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;利用 &lt;code&gt;Capistrano&lt;/code&gt; 把项目成功部署到了测试服上，但是打开域名，出现问题：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;You don’t have permission to access / on this server. Server
-        
-      
-    
-    </summary>
-    
-      <category term="运维部署" scheme="https://lazy-hub.com/categories/%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2/"/>
-    
-    
-      <category term="403 Forbidden" scheme="https://lazy-hub.com/tags/403-Forbidden/"/>
-    
-      <category term=".htacess 500错误" scheme="https://lazy-hub.com/tags/htacess-500%E9%94%99%E8%AF%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>初探Composer</title>
-    <link href="https://lazy-hub.com/2019-05-03-Preliminary-study-Ccomposer.html"/>
-    <id>https://lazy-hub.com/2019-05-03-Preliminary-study-Ccomposer.html</id>
-    <published>2019-05-03T05:41:23.000Z</published>
-    <updated>2019-06-11T03:03:44.461Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
-        
-      
-    
-    </summary>
-    
-      <category term="运维部署" scheme="https://lazy-hub.com/categories/%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2/"/>
-    
-    
-      <category term="PHP" scheme="https://lazy-hub.com/tags/PHP/"/>
-    
-      <category term="Composer" scheme="https://lazy-hub.com/tags/Composer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>初探Capistrano自动化部署</title>
-    <link href="https://lazy-hub.com/2019-05-03-Preliminary-Exploration-of-Capistrano-Automation.html"/>
-    <id>https://lazy-hub.com/2019-05-03-Preliminary-Exploration-of-Capistrano-Automation.html</id>
-    <published>2019-05-03T05:41:09.000Z</published>
-    <updated>2019-06-11T03:03:44.460Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;p&gt;Capistrano 安装在本地，安装时需要ruby和gem。&lt;/p&gt;
-&lt;figure class=&quot;highlight
-        
-      
-    
-    </summary>
-    
-      <category term="运维部署" scheme="https://lazy-hub.com/categories/%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2/"/>
-    
-    
-      <category term="运维部署" scheme="https://lazy-hub.com/tags/%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2/"/>
-    
-      <category term="自动化部署" scheme="https://lazy-hub.com/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/"/>
-    
-      <category term="Capistrano" scheme="https://lazy-hub.com/tags/Capistrano/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL字符集的设置utf8</title>
-    <link href="https://lazy-hub.com/2019-05-03-MySQL-character-set-set-utf8.html"/>
-    <id>https://lazy-hub.com/2019-05-03-MySQL-character-set-set-utf8.html</id>
-    <published>2019-05-03T05:33:19.000Z</published>
-    <updated>2019-06-11T03:03:44.456Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;以下内容仅供参考,实际开发中多用utf8mb4&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;MySQL的字符集和校对集有4个级别的默认设置：服务器级、数据库级、表级和字段级。&lt;/p&gt;
-&lt;h2 id=&quot;服务器设置utf8&quot;&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="MySQL" scheme="https://lazy-hub.com/categories/MySQL/"/>
-    
-    
-      <category term="MySQL" scheme="https://lazy-hub.com/tags/MySQL/"/>
-    
-      <category term="MySQL开发" scheme="https://lazy-hub.com/tags/MySQL%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vagrant+VirtualBox部署开发环境</title>
-    <link href="https://lazy-hub.com/2017-04-08-vagrant-vbox-deploy-dev-env.html"/>
-    <id>https://lazy-hub.com/2017-04-08-vagrant-vbox-deploy-dev-env.html</id>
-    <published>2017-04-08T02:53:23.000Z</published>
-    <updated>2019-06-11T03:03:44.459Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;VirtualBox 版本 5.1.18&lt;br&gt;Vagrant 版本 1.9.3&lt;br&gt;开发系统：Mac OSX&lt;/p&gt;
-&lt;p&gt;不要被什么 &lt;code&gt;Vagrant&lt;/code&gt; 没听过的名词给吓住了，其实部署很简单，至少比我以前直接在 &lt;code&gt;VirtualBox&lt;/code&gt; 安装 &lt;code&gt;Ubuntu&lt;/code&gt; 轻松多了。&lt;/p&gt;
-&lt;h2 id=&quot;下载所需软件&quot;&gt;&lt;a href=&quot;#下载所需软件&quot; class=&quot;headerlink&quot; title=&quot;下载所需软件&quot;&gt;&lt;/a&gt;下载所需软件&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;下载 &lt;code&gt;VirtualBox&lt;/code&gt; 并安装。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;官网：&lt;a href=&quot;https://www.virtualbox.org/wiki/Downloads&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.virtualbox.org/wiki/Downloads&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;下载 &lt;code&gt;Vagrant&lt;/code&gt; 并安装。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;官网：&lt;a href=&quot;https://www.vagrantup.com/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://www.vagrantup.com/&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;VirtualBox&lt;/code&gt; 和 &lt;code&gt;Vagrant&lt;/code&gt; 版本需要适配，都用官方最新的即可。直接官方下载，不要去其他莫名其妙的地方下载。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;下载Box&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;下载地址：&lt;a href=&quot;http://www.vagrantbox.es/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://www.vagrantbox.es/&lt;/a&gt;&lt;br&gt;我使用的是&lt;code&gt;Ubuntu 16.04&lt;/code&gt;，并将其命名为 &lt;code&gt;Ubuntu1604.box&lt;/code&gt;&lt;br&gt;为了方便管理，在家目录下新建文件夹 vagrant/box，将下载的box放入该文件夹内。&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;mkdir -p ~/vagrant/box&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="运维部署" scheme="https://lazy-hub.com/categories/%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2/"/>
-    
-    
-      <category term="运维部署" scheme="https://lazy-hub.com/tags/%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2/"/>
-    
-      <category term="Vagrant" scheme="https://lazy-hub.com/tags/Vagrant/"/>
-    
-      <category term="VirtualBox" scheme="https://lazy-hub.com/tags/VirtualBox/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu 16.04 编译安装 LNMP 环境</title>
-    <link href="https://lazy-hub.com/2017-04-07-Ubuntu-compile-and-install-LNMP.html"/>
-    <id>https://lazy-hub.com/2017-04-07-Ubuntu-compile-and-install-LNMP.html</id>
-    <published>2017-04-07T10:46:08.000Z</published>
-    <updated>2019-06-11T03:03:44.459Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;个人习惯：源代码包放在 &lt;code&gt;/usr/local/src&lt;/code&gt; 目录下，安装路径在 &lt;code&gt;/usr/local&lt;/code&gt;下&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Ubuntu是Vagrant+VirtualBox搭建&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&quot;编译-Nginx&quot;&gt;&lt;a href=&quot;#编译-Nginx&quot; class=&quot;headerlink&quot; title=&quot;编译 Nginx&quot;&gt;&lt;/a&gt;编译 Nginx&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;下载 Nginx 源码包，我选择的是 1.10.3 稳定版&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt;目录 /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/src&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; wget http://nginx.org/download/nginx-1.10.3.tar.gz&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;ul&gt;
-&lt;li&gt;解压源码包&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt;目录 /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/src&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; tar vfzx nginx-1.10.3.tar.gz&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;ul&gt;
-&lt;li&gt;配置安装路径&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt;目录 /usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/src/nginx-1.10.3/&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt; ./configure --prefix=usr/&lt;span class=&quot;built_in&quot;&gt;local&lt;/span&gt;/nginx&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;ul&gt;
-&lt;li&gt;此时编译报错：没有 C 编译器&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;./configure: error: C compiler cc is not found&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ sudo apt-get install build-essential&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;ul&gt;
-&lt;li&gt;再次配置安装路径，报错：缺少 PCRE 库&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;./configure: error: the HTTP rewrite module requires the PCRE library.&lt;/strong&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="运维部署" scheme="https://lazy-hub.com/categories/%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2/"/>
-    
-    
-      <category term="运维部署" scheme="https://lazy-hub.com/tags/%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2/"/>
-    
-      <category term="LNMP" scheme="https://lazy-hub.com/tags/LNMP/"/>
-    
-      <category term="编译安装" scheme="https://lazy-hub.com/tags/%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL索引设计原则</title>
-    <link href="https://lazy-hub.com/2017-03-29-MySQL-index-design-principles.html"/>
-    <id>https://lazy-hub.com/2017-03-29-MySQL-index-design-principles.html</id>
-    <published>2017-03-29T09:50:47.000Z</published>
-    <updated>2019-06-11T03:03:44.457Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;索引是数据库中用来提高性能的最常用的工具,对相关列使用索引是提高&lt;code&gt;SELECT&lt;/code&gt; 操作性能的最佳途径.&lt;/p&gt;
-&lt;h2 id=&quot;创建与删除索引&quot;&gt;&lt;a href=&quot;#创建与删除索引&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="MySQL" scheme="https://lazy-hub.com/categories/MySQL/"/>
-    
-    
-      <category term="MySQL" scheme="https://lazy-hub.com/tags/MySQL/"/>
-    
-      <category term="MySQL索引" scheme="https://lazy-hub.com/tags/MySQL%E7%B4%A2%E5%BC%95/"/>
-    
-      <category term="MySQL性能优化" scheme="https://lazy-hub.com/tags/MySQL%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SSH密钥对认证实现SSH免密登录</title>
-    <link href="https://lazy-hub.com/2017-03-15-SSH-key-pair-authentication.html"/>
-    <id>https://lazy-hub.com/2017-03-15-SSH-key-pair-authentication.html</id>
-    <published>2017-03-15T09:40:11.000Z</published>
-    <updated>2019-06-11T03:03:44.458Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;普通SSH登录方式&quot;&gt;&lt;a href=&quot;#普通SSH登录方式&quot; class=&quot;headerlink&quot; title=&quot;普通SSH登录方式&quot;&gt;&lt;/a&gt;普通SSH登录方式&lt;/h2&gt;&lt;p&gt;一般非根用户登录服务器：&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ssh zhangsan@120.31.29.101&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;然后输入相对应的用户密码登录即可。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;缺点：&lt;/strong&gt; 不安全，极易受到暴力攻击&lt;/p&gt;
-&lt;h2 id=&quot;SSH密钥对认证方式登录&quot;&gt;&lt;a href=&quot;#SSH密钥对认证方式登录&quot; class=&quot;headerlink&quot; title=&quot;SSH密钥对认证方式登录&quot;&gt;&lt;/a&gt;SSH密钥对认证方式登录&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;在本机创建密钥对&lt;/li&gt;
-&lt;/ul&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;ssh-keygen&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-      <category term="Linux/Mac" scheme="https://lazy-hub.com/categories/Linux-Mac/"/>
-    
-    
-      <category term="SSH" scheme="https://lazy-hub.com/tags/SSH/"/>
-    
-      <category term="运维部署" scheme="https://lazy-hub.com/tags/%E8%BF%90%E7%BB%B4%E9%83%A8%E7%BD%B2/"/>
-    
-      <category term="SSH登录" scheme="https://lazy-hub.com/tags/SSH%E7%99%BB%E5%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>高性能网站建设指南</title>
-    <link href="https://lazy-hub.com/2017-03-01-High-performance-website-construction-guide.html"/>
-    <id>https://lazy-hub.com/2017-03-01-High-performance-website-construction-guide.html</id>
-    <published>2017-03-01T08:13:41.000Z</published>
-    <updated>2019-06-11T03:03:44.462Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;减少HTTP请求&quot;&gt;&lt;a href=&quot;#减少HTTP请求&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="性能优化" scheme="https://lazy-hub.com/categories/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
-    
-    
-      <category term="Web开发" scheme="https://lazy-hub.com/tags/Web%E5%BC%80%E5%8F%91/"/>
-    
-      <category term="性能优化" scheme="https://lazy-hub.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP手册阅读笔记(三)</title>
-    <link href="https://lazy-hub.com/2017-02-17-PHP-Manual-reading-notes-3.html"/>
-    <id>https://lazy-hub.com/2017-02-17-PHP-Manual-reading-notes-3.html</id>
-    <published>2017-02-17T03:18:33.000Z</published>
-    <updated>2019-06-11T03:03:44.457Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;递增递减&quot;&gt;&lt;a href=&quot;#递增递减&quot; class=&quot;headerlink&quot; title=&quot;递增递减&quot;&gt;&lt;/a&gt;递增递减&lt;/h2&gt;&lt;p&gt;每次碰见形如 &lt;code&gt;$a++&lt;/code&gt; 或
-        
-      
-    
-    </summary>
-    
-      <category term="PHP" scheme="https://lazy-hub.com/categories/PHP/"/>
-    
-    
-      <category term="PHP" scheme="https://lazy-hub.com/tags/PHP/"/>
-    
-      <category term="PHP手册" scheme="https://lazy-hub.com/tags/PHP%E6%89%8B%E5%86%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP手册阅读笔记(二)</title>
-    <link href="https://lazy-hub.com/2017-01-18-PHP-Manual-reading-notes-2.html"/>
-    <id>https://lazy-hub.com/2017-01-18-PHP-Manual-reading-notes-2.html</id>
-    <published>2017-01-18T06:50:12.000Z</published>
-    <updated>2019-06-11T03:03:44.458Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;布尔FALSE&quot;&gt;&lt;a href=&quot;#布尔FALSE&quot; class=&quot;headerlink&quot; title=&quot;布尔FALSE&quot;&gt;&lt;/a&gt;布尔FALSE&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;布尔值 FALSE 本身&lt;/li&gt;
-&lt;li&gt;整型值
-        
-      
-    
-    </summary>
-    
-      <category term="PHP" scheme="https://lazy-hub.com/categories/PHP/"/>
-    
-    
-      <category term="PHP" scheme="https://lazy-hub.com/tags/PHP/"/>
-    
-      <category term="PHP手册" scheme="https://lazy-hub.com/tags/PHP%E6%89%8B%E5%86%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PHP手册阅读笔记(一)</title>
-    <link href="https://lazy-hub.com/2016-12-27-PHP-Manual-reading-notes-1.html"/>
-    <id>https://lazy-hub.com/2016-12-27-PHP-Manual-reading-notes-1.html</id>
-    <published>2016-12-27T11:30:41.000Z</published>
-    <updated>2019-06-11T03:03:44.457Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;PHP短标签&quot;&gt;&lt;a href=&quot;#PHP短标签&quot; class=&quot;headerlink&quot; title=&quot;PHP短标签&quot;&gt;&lt;/a&gt;PHP短标签&lt;/h2&gt;&lt;p&gt;不鼓励使用短标签&lt;/p&gt;
-&lt;h2 id=&quot;结束标签&quot;&gt;&lt;a href=&quot;#结束标签&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="PHP" scheme="https://lazy-hub.com/categories/PHP/"/>
-    
-    
-      <category term="PHP" scheme="https://lazy-hub.com/tags/PHP/"/>
-    
-      <category term="PHP手册" scheme="https://lazy-hub.com/tags/PHP%E6%89%8B%E5%86%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MySQL常用引擎比较</title>
-    <link href="https://lazy-hub.com/2016-12-23-MySQL-commonly-used-engine-comparison.html"/>
-    <id>https://lazy-hub.com/2016-12-23-MySQL-commonly-used-engine-comparison.html</id>
-    <published>2016-12-23T04:58:27.000Z</published>
-    <updated>2019-06-11T03:03:44.456Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;一表胜千言😂&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;特点&lt;/th&gt;
-&lt;th&gt;MyISAM&lt;/th&gt;
-&lt;th&gt;InnoDB&lt;/th&gt;
-&lt;th&gt;MEMORY&lt;/th&gt;
-&lt;th&gt;MERGE&lt;/th&gt;
-&lt;th&gt;NDB&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;
-        
-      
-    
-    </summary>
-    
-      <category term="MySQL" scheme="https://lazy-hub.com/categories/MySQL/"/>
-    
-    
-      <category term="MySQL" scheme="https://lazy-hub.com/tags/MySQL/"/>
-    
-      <category term="MySQL引擎" scheme="https://lazy-hub.com/tags/MySQL%E5%BC%95%E6%93%8E/"/>
     
   </entry>
   

@@ -287,7 +287,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lazy-hub.com/2019-05-03-MySQL-character-set-set-utf8.html">
+    <link itemprop="mainEntityOfPage" href="https://lazy-hub.com/2019-07-02-build-a-laravel-app-with-tdd-07.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="苏格兰圆脸滑稽">
@@ -306,7 +306,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019-05-03-MySQL-character-set-set-utf8.html" itemprop="url">MySQL字符集的设置utf8</a></h1>
+                <a class="post-title-link" href="/2019-07-02-build-a-laravel-app-with-tdd-07.html" itemprop="url">TDD 构建 Laravel 应用之创建项目视图</a></h1>
         
 
         <div class="post-meta">
@@ -318,8 +318,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-03T13:33:19+08:00">
-                2019-05-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-02T07:20:53+08:00">
+                2019-07-02
               </time>
             
 
@@ -341,8 +341,942 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MySQL/" itemprop="url" rel="index">
-                    <span itemprop="name">MySQL</span>
+                  <a href="/categories/TDD-构建-Laravel-应用/" itemprop="url" rel="index">
+                    <span itemprop="name">TDD 构建 Laravel 应用</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>本系列文章为 <code>laracasts.com</code> 的系列视频教程 ——<a href="https://laracasts.com/series/build-a-laravel-app-with-tdd" target="_blank" rel="noopener">Build A Laravel App With TDD</a> 的学习笔记，若喜欢该系列视频，可去该网站订阅后下载该系列视频， <strong>支持正版</strong> 。</p>
+</blockquote>
+<h2 id="游客无法操作项目"><a href="#游客无法操作项目" class="headerlink" title="游客无法操作项目"></a>游客无法操作项目</h2><p>之前的很多测试都是在用户登录的状态下写的测试用例，现在我们来写一份游客相关的测试：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** <span class="doctag">@test</span> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">guests_cannot_manage_projects</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  $project = factory(<span class="string">'App\Project'</span>)-&gt;create();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">$this</span>-&gt;get(<span class="string">'/projects'</span>)-&gt;assertRedirect(<span class="string">'login'</span>);</span><br><span class="line">  <span class="keyword">$this</span>-&gt;get($project-&gt;path())-&gt;assertRedirect(<span class="string">'login'</span>);</span><br><span class="line">  <span class="keyword">$this</span>-&gt;post(<span class="string">'/projects'</span>, $project-&gt;toArray())-&gt;assertRedirect(<span class="string">'login'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行测试成功！</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019-07-02-build-a-laravel-app-with-tdd-07.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lazy-hub.com/2019-06-29-build-a-laravel-app-with-tdd-06.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏格兰圆脸滑稽">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="做牛当码">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019-06-29-build-a-laravel-app-with-tdd-06.html" itemprop="url">TDD 构建 Laravel 应用之项目范围界定</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-29T16:17:20+08:00">
+                2019-06-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TDD-构建-Laravel-应用/" itemprop="url" rel="index">
+                    <span itemprop="name">TDD 构建 Laravel 应用</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>本系列文章为 <code>laracasts.com</code> 的系列视频教程 ——<a href="https://laracasts.com/series/build-a-laravel-app-with-tdd" target="_blank" rel="noopener">Build A Laravel App With TDD</a> 的学习笔记，若喜欢该系列视频，可去该网站订阅后下载该系列视频， <strong>支持正版</strong> 。</p>
+</blockquote>
+<p>之前的项目列表是显示所有项目，在加入所有者之后，应该显示当前用户的项目比较合适。让我们来修改相关的代码：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 控制器</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  $projects = auth()-&gt;user()-&gt;projects;</span><br><span class="line">  <span class="keyword">return</span> view(<span class="string">'projects.index'</span>, compact(<span class="string">'projects'</span>));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 路由文件</span></span><br><span class="line">Route::get(<span class="string">'/projects'</span>, <span class="string">'ProjectsController@index'</span>)-&gt;middleware(<span class="string">'auth'</span>);</span><br></pre></td></tr></table></figure>
+
+<p>打开 <code>http://birdboard.test/projects</code> ，测试需要登录，注册登录后，显示 <code>No project yet.</code></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019-06-29-build-a-laravel-app-with-tdd-06.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lazy-hub.com/2019-06-29-build-a-laravel-app-with-tdd-05.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏格兰圆脸滑稽">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="做牛当码">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019-06-29-build-a-laravel-app-with-tdd-05.html" itemprop="url">TDD 构建 Laravel 应用之项目所有者</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-29T07:11:20+08:00">
+                2019-06-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TDD-构建-Laravel-应用/" itemprop="url" rel="index">
+                    <span itemprop="name">TDD 构建 Laravel 应用</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>本系列文章为 <code>laracasts.com</code> 的系列视频教程 ——<a href="https://laracasts.com/series/build-a-laravel-app-with-tdd" target="_blank" rel="noopener">Build A Laravel App With TDD</a> 的学习笔记，若喜欢该系列视频，可去该网站订阅后下载该系列视频， <strong>支持正版</strong> 。</p>
+</blockquote>
+<p>现在我们虽然可以创建项目了，但是和用户没有任何关系，为了解决这个问题，我们将编写一个测试来确认经过身份验证的用户始终被指定为在其会话期间创建的任何新项目的所有者。</p>
+<h2 id="项目需要一个所有者"><a href="#项目需要一个所有者" class="headerlink" title="项目需要一个所有者"></a>项目需要一个所有者</h2><p>编写一个功能测试：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** <span class="doctag">@test</span> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">a_project_requires_an_owner</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  $attributes = factory(<span class="string">'App\Project'</span>)-&gt;raw();</span><br><span class="line">  <span class="keyword">$this</span>-&gt;post(<span class="string">'/projects'</span>, $attributes)-&gt;assertSessionHasErrors(<span class="string">'owner'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行测试，报错：</p>
+<blockquote>
+<p>There was 1 failure:</p>
+<p>1) Tests\Feature\ProjectsTest::a_project_requires_an_owner<br>Session is missing expected key [errors].<br>Failed asserting that false is true.</p>
+</blockquote>
+<p>OK，这完全是因为我们的表结构没有关于任何用户相关的字段。修改下 <code>projects</code> 表文件：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">up</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  Schema::create(<span class="string">'projects'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(Blueprint $table)</span> </span>&#123;</span><br><span class="line">    $table-&gt;bigIncrements(<span class="string">'id'</span>);</span><br><span class="line">    $table-&gt;unsignedBigInteger(<span class="string">'owner_id'</span>);</span><br><span class="line">    $table-&gt;string(<span class="string">'title'</span>);</span><br><span class="line">    $table-&gt;text(<span class="string">'description'</span>);</span><br><span class="line">    $table-&gt;timestamps();</span><br><span class="line">  &#125;);</span><br><span class="line">  </span><br><span class="line">  $table-&gt;foreign(<span class="string">'owner_id'</span>)-&gt;references(<span class="string">'id'</span>)-&gt;on(<span class="string">'users'</span>)-&gt;onDelete(<span class="string">'cascade'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>重置迁移文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan migrate:refresh</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019-06-29-build-a-laravel-app-with-tdd-05.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lazy-hub.com/2019-06-20-build-a-laravel-app-with-tdd-04.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏格兰圆脸滑稽">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="做牛当码">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019-06-20-build-a-laravel-app-with-tdd-04.html" itemprop="url">TDD 构建 Laravel 应用之模型测试</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-20T07:36:25+08:00">
+                2019-06-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TDD-构建-Laravel-应用/" itemprop="url" rel="index">
+                    <span itemprop="name">TDD 构建 Laravel 应用</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>本系列文章为 <code>laracasts.com</code> 的系列视频教程 ——<a href="https://laracasts.com/series/build-a-laravel-app-with-tdd" target="_blank" rel="noopener">Build A Laravel App With TDD</a> 的学习笔记，若喜欢该系列视频，可去该网站订阅后下载该系列视频， <strong>支持正版</strong> 。</p>
+</blockquote>
+<h2 id="测试用户查看一个项目的权限"><a href="#测试用户查看一个项目的权限" class="headerlink" title="测试用户查看一个项目的权限"></a>测试用户查看一个项目的权限</h2><p>用户查看某个项目详情，应该可以看见<code>标题</code>与<code>描述</code>，于是我们开始编写测试方法：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** <span class="doctag">@test</span> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">a_user_can_view_a_project</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  $project = factory(<span class="string">'App\Project'</span>)-&gt;create();</span><br><span class="line"></span><br><span class="line">  <span class="keyword">$this</span>-&gt;get(<span class="string">'/projects/'</span> . $project-&gt;id)</span><br><span class="line">    -&gt;assertSee($project-&gt;title)</span><br><span class="line">    -&gt;assertSee($project-&gt;description);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行测试：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pf ProjectsTest</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019-06-20-build-a-laravel-app-with-tdd-04.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lazy-hub.com/2019-06-19-build-a-laravel-app-with-tdd-03.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏格兰圆脸滑稽">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="做牛当码">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019-06-19-build-a-laravel-app-with-tdd-03.html" itemprop="url">TDD 构建 Laravel 应用之测试请求验证</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-19T21:00:01+08:00">
+                2019-06-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TDD-构建-Laravel-应用/" itemprop="url" rel="index">
+                    <span itemprop="name">TDD 构建 Laravel 应用</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>本系列文章为 <code>laracasts.com</code> 的系列视频教程 ——<a href="https://laracasts.com/series/build-a-laravel-app-with-tdd" target="_blank" rel="noopener">Build A Laravel App With TDD</a> 的学习笔记，若喜欢该系列视频，可去该网站订阅后下载该系列视频， <strong>支持正版</strong> 。</p>
+</blockquote>
+<p>上一小节保存数据之前没有验证数据完整性，这一小节主要测试请求数据合法性。</p>
+<h2 id="编写一个验证-标题-的功能测试："><a href="#编写一个验证-标题-的功能测试：" class="headerlink" title="编写一个验证 标题 的功能测试："></a>编写一个验证 <code>标题</code> 的功能测试：</h2><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** <span class="doctag">@test</span> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">a_project_requires_title</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">$this</span>-&gt;post(<span class="string">'/projects'</span>, [])-&gt;assertSessionHasErrors(<span class="string">'title'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>测试该方法：</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vendor/bin/phpunit --filter a_project_requires_title</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019-06-19-build-a-laravel-app-with-tdd-03.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lazy-hub.com/2019-06-19-build-a-laravel-app-with-tdd-02.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏格兰圆脸滑稽">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="做牛当码">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019-06-19-build-a-laravel-app-with-tdd-02.html" itemprop="url">TDD 构建 Laravel 应用之从测试开始</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-19T06:57:42+08:00">
+                2019-06-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TDD-构建-Laravel-应用/" itemprop="url" rel="index">
+                    <span itemprop="name">TDD 构建 Laravel 应用</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>本系列文章为 <code>laracasts.com</code> 的系列视频教程 ——<a href="https://laracasts.com/series/build-a-laravel-app-with-tdd" target="_blank" rel="noopener">Build A Laravel App With TDD</a> 的学习笔记，若喜欢该系列视频，可去该网站订阅后下载该系列视频， <strong>支持正版</strong> 。</p>
+</blockquote>
+<h2 id="开始-Project-的功能测试"><a href="#开始-Project-的功能测试" class="headerlink" title="开始 Project 的功能测试"></a>开始 Project 的功能测试</h2><ul>
+<li>生成功能测试文件：</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php artisan make:test ProjectsTest</span><br></pre></td></tr></table></figure>
+
+<p>在 <code>tests\Feature</code>目录中可以找到该文件</p>
+<ul>
+<li>开始第一个功能测试：用户创建项目</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">Tests</span>\<span class="title">Feature</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">Tests</span>\<span class="title">TestCase</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Foundation</span>\<span class="title">Testing</span>\<span class="title">WithFaker</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">Illuminate</span>\<span class="title">Foundation</span>\<span class="title">Testing</span>\<span class="title">RefreshDatabase</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ProjectsTest</span> <span class="keyword">extends</span> <span class="title">TestCase</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">use</span> <span class="title">WithFaker</span>, <span class="title">RefreshDatabase</span>;  <span class="comment">//生成假数据, 每次测试后重置数据库</span></span><br><span class="line">    <span class="comment">/** <span class="doctag">@test</span> */</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">a_user_can_create_a_project</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">$this</span>-&gt;withoutExceptionHandling();</span><br><span class="line">        $attributes = [</span><br><span class="line">            <span class="string">'title'</span> =&gt; <span class="keyword">$this</span>-&gt;faker-&gt;sentence,</span><br><span class="line">            <span class="string">'description'</span> =&gt; <span class="keyword">$this</span>-&gt;faker-&gt;paragraph</span><br><span class="line">        ];</span><br><span class="line">      </span><br><span class="line">        <span class="keyword">$this</span>-&gt;post(<span class="string">'/projects'</span>, $attributes);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 断言数据库中的数据是否和给定数据集合匹配</span></span><br><span class="line">        <span class="keyword">$this</span>-&gt;assertDatabaseHas(<span class="string">'projects'</span>, $attributes);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运行测试：</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019-06-19-build-a-laravel-app-with-tdd-02.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lazy-hub.com/2019-06-14-build-a-laravel-app-with-tdd-01.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="苏格兰圆脸滑稽">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="做牛当码">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019-06-14-build-a-laravel-app-with-tdd-01.html" itemprop="url">TDD 构建 Laravel 应用之遇见 Birdboard</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-14T12:18:14+08:00">
+                2019-06-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TDD-构建-Laravel-应用/" itemprop="url" rel="index">
+                    <span itemprop="name">TDD 构建 Laravel 应用</span>
                   </a>
                 </span>
 
@@ -381,16 +1315,20 @@
         
           
             <blockquote>
-<p>以下内容仅供参考,实际开发中多用utf8mb4</p>
+<p>本系列文章为 <code>laracasts.com</code> 的系列视频教程 ——<a href="https://laracasts.com/series/build-a-laravel-app-with-tdd" target="_blank" rel="noopener">Build A Laravel App With TDD</a> 的学习笔记，若喜欢该系列视频，可去该网站订阅后下载该系列视频， <strong>支持正版</strong> 。</p>
 </blockquote>
-<p>MySQL的字符集和校对集有4个级别的默认设置：服务器级、数据库级、表级和字段级。</p>
-<h2 id="服务器设置utf8"><a href="#服务器设置utf8" class="headerlink" title="服务器设置utf8"></a>服务器设置utf8</h2><p>在my.cnf中设置</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">character-set-server=utf8</span><br></pre></td></tr></table></figure>
+<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><ul>
+<li><p>Mac 推荐 Valet</p>
+</li>
+<li><p>Windows 推荐 Laragon</p>
+</li>
+</ul>
+<h2 id="创建应用"><a href="#创建应用" class="headerlink" title="创建应用"></a>创建应用</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">laravel new birdboard</span><br></pre></td></tr></table></figure>
 
-<h2 id="交互客户机和服务器设置utf8"><a href="#交互客户机和服务器设置utf8" class="headerlink" title="交互客户机和服务器设置utf8"></a>交互客户机和服务器设置utf8</h2><p>在my.cnf中设置：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[mysql]</span><br><span class="line">default-character-set=utf8</span><br></pre></td></tr></table></figure>
+<p>此时打开 <code>birdboard.test</code> ，显示页面：</p>
+<p><img src="/static/1906/meet_board.jpg" alt></p>
+<h2 id="加入版本库"><a href="#加入版本库" class="headerlink" title="加入版本库"></a>加入版本库</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git add .</span><br><span class="line">git commit -m "安装框架"</span><br></pre></td></tr></table></figure>
 
-<h2 id="遇见乱码怎么办"><a href="#遇见乱码怎么办" class="headerlink" title="遇见乱码怎么办?"></a>遇见乱码怎么办?</h2><p>请确保客户端,服务器,客户端与服务器互动连接这三者的编码都一致.</p>
 
           
         
@@ -439,7 +1377,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lazy-hub.com/2017-04-08-vagrant-vbox-deploy-dev-env.html">
+    <link itemprop="mainEntityOfPage" href="https://lazy-hub.com/2019-06-13-Laravel_5_7_Dump_Server.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="苏格兰圆脸滑稽">
@@ -458,7 +1396,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017-04-08-vagrant-vbox-deploy-dev-env.html" itemprop="url">Vagrant+VirtualBox部署开发环境</a></h1>
+                <a class="post-title-link" href="/2019-06-13-Laravel_5_7_Dump_Server.html" itemprop="url">Laravel 5.7 新特性之DumpServer</a></h1>
         
 
         <div class="post-meta">
@@ -470,8 +1408,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-08T10:53:23+08:00">
-                2017-04-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-13T12:31:32+08:00">
+                2019-06-13
               </time>
             
 
@@ -493,8 +1431,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/运维部署/" itemprop="url" rel="index">
-                    <span itemprop="name">运维部署</span>
+                  <a href="/categories/Laravel-5-7-新特性/" itemprop="url" rel="index">
+                    <span itemprop="name">Laravel 5.7 新特性</span>
                   </a>
                 </span>
 
@@ -531,25 +1469,14 @@
 
       
         
-          <p>VirtualBox 版本 5.1.18<br>Vagrant 版本 1.9.3<br>开发系统：Mac OSX</p>
-<p>不要被什么 <code>Vagrant</code> 没听过的名词给吓住了，其实部署很简单，至少比我以前直接在 <code>VirtualBox</code> 安装 <code>Ubuntu</code> 轻松多了。</p>
-<h2 id="下载所需软件"><a href="#下载所需软件" class="headerlink" title="下载所需软件"></a>下载所需软件</h2><ul>
-<li>下载 <code>VirtualBox</code> 并安装。</li>
-</ul>
-<p>官网：<a href="https://www.virtualbox.org/wiki/Downloads" target="_blank" rel="noopener">https://www.virtualbox.org/wiki/Downloads</a></p>
-<ul>
-<li>下载 <code>Vagrant</code> 并安装。</li>
-</ul>
-<p>官网：<a href="https://www.vagrantup.com/" target="_blank" rel="noopener">https://www.vagrantup.com/</a></p>
-<p><code>VirtualBox</code> 和 <code>Vagrant</code> 版本需要适配，都用官方最新的即可。直接官方下载，不要去其他莫名其妙的地方下载。</p>
-<ul>
-<li>下载Box</li>
-</ul>
-<p>下载地址：<a href="http://www.vagrantbox.es/" target="_blank" rel="noopener">http://www.vagrantbox.es/</a><br>我使用的是<code>Ubuntu 16.04</code>，并将其命名为 <code>Ubuntu1604.box</code><br>为了方便管理，在家目录下新建文件夹 vagrant/box，将下载的box放入该文件夹内。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p ~/vagrant/box</span><br></pre></td></tr></table></figure>
+          <h2 id="相关依赖"><a href="#相关依赖" class="headerlink" title="相关依赖"></a>相关依赖</h2><p>在 <code>composer.json</code> 文件的 <code>require-dev</code> 中有关于 <code>dumper-server</code> 的依赖：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">"beyondcode/laravel-dump-server": "^1.0",</span><br></pre></td></tr></table></figure>
+
+<h2 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h2><p>在路由 <code>web.php</code> 中写一个测试路由：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Route::get(<span class="string">'/hello'</span>, <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">   dump(request()-&gt;all());</span><br><span class="line">   <span class="keyword">return</span> <span class="string">'Hello'</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017-04-08-vagrant-vbox-deploy-dev-env.html#more" rel="contents">
+            <a class="btn" href="/2019-06-13-Laravel_5_7_Dump_Server.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -600,7 +1527,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lazy-hub.com/2017-04-07-Ubuntu-compile-and-install-LNMP.html">
+    <link itemprop="mainEntityOfPage" href="https://lazy-hub.com/2019-06-11-Laravel_5_7_Email_Verification.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="苏格兰圆脸滑稽">
@@ -619,7 +1546,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017-04-07-Ubuntu-compile-and-install-LNMP.html" itemprop="url">Ubuntu 16.04 编译安装 LNMP 环境</a></h1>
+                <a class="post-title-link" href="/2019-06-11-Laravel_5_7_Email_Verification.html" itemprop="url">Laravel 5.7 新特性之邮箱验证</a></h1>
         
 
         <div class="post-meta">
@@ -631,8 +1558,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-07T18:46:08+08:00">
-                2017-04-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-11T07:34:05+08:00">
+                2019-06-11
               </time>
             
 
@@ -654,8 +1581,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/运维部署/" itemprop="url" rel="index">
-                    <span itemprop="name">运维部署</span>
+                  <a href="/categories/Laravel-5-7-新特性/" itemprop="url" rel="index">
+                    <span itemprop="name">Laravel 5.7 新特性</span>
                   </a>
                 </span>
 
@@ -692,36 +1619,25 @@
 
       
         
-          <p><strong>个人习惯：源代码包放在 <code>/usr/local/src</code> 目录下，安装路径在 <code>/usr/local</code>下</strong></p>
-<p><strong>Ubuntu是Vagrant+VirtualBox搭建</strong></p>
-<h2 id="编译-Nginx"><a href="#编译-Nginx" class="headerlink" title="编译 Nginx"></a>编译 Nginx</h2><ul>
-<li>下载 Nginx 源码包，我选择的是 1.10.3 稳定版</li>
+          <h2 id="使用方式"><a href="#使用方式" class="headerlink" title="使用方式"></a>使用方式</h2><ul>
+<li>创建一个 Laravel 项目</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">目录 /usr/<span class="built_in">local</span>/src</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> wget http://nginx.org/download/nginx-1.10.3.tar.gz</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">laravel new knowledge</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>解压源码包</li>
+<li>修改配置 形如：</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">目录 /usr/<span class="built_in">local</span>/src</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> tar vfzx nginx-1.10.3.tar.gz</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">DB_CONNECTION=mysql</span><br><span class="line">DB_HOST=127.0.0.1</span><br><span class="line">DB_PORT=3306</span><br><span class="line">DB_DATABASE=knowledge</span><br><span class="line">DB_USERNAME=root</span><br><span class="line">DB_PASSWORD=</span><br><span class="line"></span><br><span class="line">MAIL_DRIVER=log #log驱动仅为开发便利</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>配置安装路径</li>
+<li>3秒搭建用户认证</li>
 </ul>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">目录 /usr/<span class="built_in">local</span>/src/nginx-1.10.3/</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./configure --prefix=usr/<span class="built_in">local</span>/nginx</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">php artisan make:auth</span><br><span class="line">php artisan migrate</span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>此时编译报错：没有 C 编译器</li>
-</ul>
-<p><strong>./configure: error: C compiler cc is not found</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt-get install build-essential</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>再次配置安装路径，报错：缺少 PCRE 库</li>
-</ul>
-<p><strong>./configure: error: the HTTP rewrite module requires the PCRE library.</strong></p>
+<p><strong>Laravel 5.7 在默认用户表中新增了 <code>email_verified_at</code> 字段</strong></p>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017-04-07-Ubuntu-compile-and-install-LNMP.html#more" rel="contents">
+            <a class="btn" href="/2019-06-11-Laravel_5_7_Email_Verification.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -772,7 +1688,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lazy-hub.com/2017-03-29-MySQL-index-design-principles.html">
+    <link itemprop="mainEntityOfPage" href="https://lazy-hub.com/2019-06-08-Go_From_Scratch_3.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="苏格兰圆脸滑稽">
@@ -791,7 +1707,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017-03-29-MySQL-index-design-principles.html" itemprop="url">MySQL索引设计原则</a></h1>
+                <a class="post-title-link" href="/2019-06-08-Go_From_Scratch_3.html" itemprop="url">从零开始Go之常量定义</a></h1>
         
 
         <div class="post-meta">
@@ -803,8 +1719,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-29T17:50:47+08:00">
-                2017-03-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-08T10:14:57+08:00">
+                2019-06-08
               </time>
             
 
@@ -826,8 +1742,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MySQL/" itemprop="url" rel="index">
-                    <span itemprop="name">MySQL</span>
+                  <a href="/categories/从零开始Go/" itemprop="url" rel="index">
+                    <span itemprop="name">从零开始Go</span>
                   </a>
                 </span>
 
@@ -864,1120 +1780,33 @@
 
       
         
-          
-            <p>索引是数据库中用来提高性能的最常用的工具,对相关列使用索引是提高<code>SELECT</code> 操作性能的最佳途径.</p>
-<h2 id="创建与删除索引"><a href="#创建与删除索引" class="headerlink" title="创建与删除索引"></a>创建与删除索引</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> [<span class="keyword">UNIQUE</span>|FULLTEXT|SPATOAL] <span class="keyword">INDEX</span> 索引名</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">INDEX</span> 索引名 <span class="keyword">ON</span> 表名</span><br></pre></td></tr></table></figure>
-
-<h2 id="设计原则"><a href="#设计原则" class="headerlink" title="设计原则"></a>设计原则</h2><ul>
-<li><p>搜索的索引列，最适合做索引的列是 WHERE 子句中的列，或连接子句中指定的列。</p>
-</li>
-<li><p>使用唯一索引。索引列的基数越大，效果越好。比如性别列，只有男、女，没什么意义。相对而言，出生日期列用唯一索引就好的多。</p>
-</li>
-<li><p>使用短索引。对字符串进行索引，应该指定一个前缀长度。比如CHAR(200)的列，如果在前10个或20个字符内，多数数值唯一，那么可使用短索引。</p>
-</li>
-<li><p>利用最左前缀。</p>
-</li>
-<li><p>不要过度索引。索引会占用额外的磁盘空间，降低写操作的性能。</p>
-</li>
+          <p><strong>Go 语言中的常量不要大写，在Go语言中，首字母大小写是有含义的</strong></p>
+<h2 id="普通常量定义"><a href="#普通常量定义" class="headerlink" title="普通常量定义"></a>普通常量定义</h2><ul>
+<li>单个常量定义</li>
 </ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> logname <span class="keyword">string</span> = <span class="string">"errorlog"</span></span><br></pre></td></tr></table></figure>
 
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lazy-hub.com/2017-03-15-SSH-key-pair-authentication.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏格兰圆脸滑稽">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="做牛当码">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017-03-15-SSH-key-pair-authentication.html" itemprop="url">SSH密钥对认证实现SSH免密登录</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-15T17:40:11+08:00">
-                2017-03-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux-Mac/" itemprop="url" rel="index">
-                    <span itemprop="name">Linux/Mac</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h2 id="普通SSH登录方式"><a href="#普通SSH登录方式" class="headerlink" title="普通SSH登录方式"></a>普通SSH登录方式</h2><p>一般非根用户登录服务器：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh zhangsan@120.31.29.101</span><br></pre></td></tr></table></figure>
-
-<p>然后输入相对应的用户密码登录即可。</p>
-<p><strong>缺点：</strong> 不安全，极易受到暴力攻击</p>
-<h2 id="SSH密钥对认证方式登录"><a href="#SSH密钥对认证方式登录" class="headerlink" title="SSH密钥对认证方式登录"></a>SSH密钥对认证方式登录</h2><ul>
-<li>在本机创建密钥对</li>
+<ul>
+<li>等同于：</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> logname = <span class="string">"errorlog"</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>多个常量赋值</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> a,b,c = <span class="string">"hello"</span>, <span class="literal">false</span>, <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>括号表示法</li>
+</ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> (</span><br><span class="line">		log = <span class="string">"error.log"</span></span><br><span class="line">		a, b = <span class="literal">false</span>, <span class="number">1</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2017-03-15-SSH-key-pair-authentication.html#more" rel="contents">
+            <a class="btn" href="/2019-06-08-Go_From_Scratch_3.html#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
           <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lazy-hub.com/2017-03-01-High-performance-website-construction-guide.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏格兰圆脸滑稽">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="做牛当码">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017-03-01-High-performance-website-construction-guide.html" itemprop="url">高性能网站建设指南</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-01T16:13:41+08:00">
-                2017-03-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/性能优化/" itemprop="url" rel="index">
-                    <span itemprop="name">性能优化</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="减少HTTP请求"><a href="#减少HTTP请求" class="headerlink" title="减少HTTP请求"></a>减少HTTP请求</h2><p><strong>图片地图</strong></p>
-<p>适用场景：图片导航之类的。多个图变成一个图，利用 <code>&lt;area&gt;&lt;area/&gt;</code> 标签和 a 标签取代多个图片请求。</p>
-<p><strong>缺点：</strong> 手工方式很难完成且极易出错。</p>
-<ul>
-<li>雪碧图</li>
-</ul>
-<p>优于图片地图，灵活。</p>
-<ul>
-<li>内联图片</li>
-</ul>
-<p>使用 <code>data:URL</code> 模式，即 Base64模式</p>
-<p><strong>缺点：</strong> IE7 这些老式浏览器不支持，数据大小有限制</p>
-<ul>
-<li>合并JS和CSS</li>
-</ul>
-<p>理想情况下实施<del>~</del>目前流行模块化、组件化。</p>
-<ul>
-<li><p>CDN 加速</p>
-</li>
-<li><p>添加 Expires 头</p>
-</li>
-</ul>
-<ul>
-<li><p>压缩组件</p>
-</li>
-<li><p>将样式表放在顶部</p>
-</li>
-<li><p>将 JS 放在底部</p>
-</li>
-<li><p>避免 CSS 表达式</p>
-</li>
-<li><p>使用外部 JavaScript 和 CSS</p>
-</li>
-<li><p>减少 DNS 查找</p>
-</li>
-</ul>
-<p>通过使用 Keep-Alive 和较少的域名来减少 DNS 查找</p>
-<ul>
-<li><p>对 JS 代码进行压缩精简</p>
-</li>
-<li><p>避免重定向</p>
-</li>
-</ul>
-<p>状态码 303-307 是在 HTTP 1.1 中增加的，用来澄清对 302 的滥用。</p>
-<p>** 重定向之外的其他选择 **</p>
-<ul>
-<li><p>缺少结尾斜线<br>当缺少URL结尾斜线时不会发生重定向</p>
-</li>
-<li><p>Alias、mod_rewrite和DirectorySlash</p>
-</li>
-<li><p>移除重复脚本</p>
-</li>
-<li><p>配置ETag</p>
-</li>
-<li><p>使用Ajax可缓存</p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lazy-hub.com/2017-02-17-PHP-Manual-reading-notes-3.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏格兰圆脸滑稽">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="做牛当码">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017-02-17-PHP-Manual-reading-notes-3.html" itemprop="url">PHP手册阅读笔记(三)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-02-17T11:18:33+08:00">
-                2017-02-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PHP/" itemprop="url" rel="index">
-                    <span itemprop="name">PHP</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="递增递减"><a href="#递增递减" class="headerlink" title="递增递减"></a>递增递减</h2><p>每次碰见形如 <code>$a++</code> 或 <code>++$a</code>都没有什么底气,应该早点看手册的,上面写的清清楚楚.</p>
-<table>
-<thead>
-<tr>
-<th>例子</th>
-<th>名称</th>
-<th>效果</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>++$a</td>
-<td>前加</td>
-<td>$a 的值加一,然后返回$a</td>
-</tr>
-<tr>
-<td>$a++</td>
-<td>后加</td>
-<td>返回$a,然后将$a 的值加一</td>
-</tr>
-<tr>
-<td>–$a</td>
-<td>前减</td>
-<td>$a 的值减一,然后返回$a</td>
-</tr>
-<tr>
-<td>$a–</td>
-<td>后减</td>
-<td>返回$a,然后将$a的值减一</td>
-</tr>
-</tbody></table>
-<h3 id="有趣的🌰"><a href="#有趣的🌰" class="headerlink" title="有趣的🌰"></a>有趣的🌰</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$a = <span class="string">"9D9"</span>;</span><br><span class="line">var_dump(++$a); <span class="comment">//9E0</span></span><br><span class="line">$a = <span class="string">"9E0"</span>;</span><br><span class="line">var_dump(++$a); <span class="comment">//float(10) 9E10=&gt;9e0=&gt;9*10^0 = 9</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="字符串运算符"><a href="#字符串运算符" class="headerlink" title="字符串运算符"></a>字符串运算符</h2><h3 id="相关🌰"><a href="#相关🌰" class="headerlink" title=". 相关🌰"></a>. 相关🌰</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$var = <span class="number">3</span>;</span><br><span class="line"><span class="keyword">echo</span> <span class="string">"Result: "</span> . $var + <span class="number">3</span>; <span class="comment">// + 号之前的强制转换成0</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">"Result: "</span> . ($var + <span class="number">3</span>); <span class="comment">//6</span></span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lazy-hub.com/2017-01-18-PHP-Manual-reading-notes-2.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏格兰圆脸滑稽">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="做牛当码">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017-01-18-PHP-Manual-reading-notes-2.html" itemprop="url">PHP手册阅读笔记(二)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-18T14:50:12+08:00">
-                2017-01-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PHP/" itemprop="url" rel="index">
-                    <span itemprop="name">PHP</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="布尔FALSE"><a href="#布尔FALSE" class="headerlink" title="布尔FALSE"></a>布尔FALSE</h2><ul>
-<li>布尔值 FALSE 本身</li>
-<li>整型值 0（零）</li>
-<li>浮点型值 0.0（零）</li>
-<li>空字符串，以及字符串 “0”</li>
-<li>不包括任何元素的数组</li>
-<li>不包括任何成员变量的对象（仅 PHP 4.0 适用）</li>
-<li>特殊类型 NULL（包括尚未赋值的变量）</li>
-<li>从空标记生成的 SimpleXML 对象</li>
-</ul>
-<h3 id="有意思的🌰"><a href="#有意思的🌰" class="headerlink" title="有意思的🌰"></a>有意思的🌰</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$x = <span class="keyword">true</span>;</span><br><span class="line">$y = <span class="keyword">false</span>;</span><br><span class="line">$z = $x || $y;</span><br><span class="line">var_dump((bool)$z); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var_dump(<span class="number">0</span> == <span class="string">'all'</span>); <span class="comment">// TRUE 'all'强制转换成了 int 0</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="超全局变量GET获取带-参数"><a href="#超全局变量GET获取带-参数" class="headerlink" title="超全局变量GET获取带.参数"></a>超全局变量GET获取带.参数</h2><p>🌰</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//?chuck.norris=nevercries</span></span><br><span class="line"><span class="keyword">echo</span> $_GET[<span class="string">'chuck.norris'</span>],<span class="string">'&lt;hr/&gt;'</span>;  <span class="comment">//错误</span></span><br><span class="line"><span class="keyword">echo</span> $_GET[<span class="string">'chuck_norris'</span>]; <span class="comment">//正确</span></span><br></pre></td></tr></table></figure>
-
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lazy-hub.com/2016-12-27-PHP-Manual-reading-notes-1.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏格兰圆脸滑稽">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="做牛当码">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016-12-27-PHP-Manual-reading-notes-1.html" itemprop="url">PHP手册阅读笔记(一)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-27T19:30:41+08:00">
-                2016-12-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/PHP/" itemprop="url" rel="index">
-                    <span itemprop="name">PHP</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="PHP短标签"><a href="#PHP短标签" class="headerlink" title="PHP短标签"></a>PHP短标签</h2><p>不鼓励使用短标签</p>
-<h2 id="结束标签"><a href="#结束标签" class="headerlink" title="结束标签"></a>结束标签</h2><p>如果文件内容是纯 PHP 代码，最好在文件末尾<strong>删除 PHP 结束标记</strong>。这可以避免在 PHP 结束标记之后万一意外加入了空格或者换行符，会导致 PHP 开始输出这些空白，而脚本中此时并无输出的意图。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lazy-hub.com/2016-12-23-MySQL-commonly-used-engine-comparison.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="苏格兰圆脸滑稽">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="做牛当码">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016-12-23-MySQL-commonly-used-engine-comparison.html" itemprop="url">MySQL常用引擎比较</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-23T12:58:27+08:00">
-                2016-12-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MySQL/" itemprop="url" rel="index">
-                    <span itemprop="name">MySQL</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>一表胜千言😂</p>
-<table>
-<thead>
-<tr>
-<th>特点</th>
-<th>MyISAM</th>
-<th>InnoDB</th>
-<th>MEMORY</th>
-<th>MERGE</th>
-<th>NDB</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>存储限制</td>
-<td>有</td>
-<td>64BT</td>
-<td>有</td>
-<td>没有</td>
-<td>有</td>
-</tr>
-<tr>
-<td>事务安全</td>
-<td></td>
-<td>支持</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>锁机制</td>
-<td>表锁</td>
-<td>行锁</td>
-<td>表锁</td>
-<td>表锁</td>
-<td>行锁</td>
-</tr>
-<tr>
-<td>B树索引</td>
-<td>支持</td>
-<td>支持</td>
-<td>支持</td>
-<td>支持</td>
-<td>支持</td>
-</tr>
-<tr>
-<td>哈希索引</td>
-<td></td>
-<td></td>
-<td>支持</td>
-<td></td>
-<td>支持</td>
-</tr>
-<tr>
-<td>全文索引</td>
-<td>支持</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>集群索引</td>
-<td></td>
-<td>支持</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>数据缓存</td>
-<td></td>
-<td>支持</td>
-<td>支持</td>
-<td></td>
-<td>支持</td>
-</tr>
-<tr>
-<td>索引缓存</td>
-<td>支持</td>
-<td>支持</td>
-<td>支持</td>
-<td>支持</td>
-<td>支持</td>
-</tr>
-<tr>
-<td>数据可压缩</td>
-<td>支持</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>空间使用</td>
-<td>低</td>
-<td>高</td>
-<td>N/A</td>
-<td>低</td>
-<td>低</td>
-</tr>
-<tr>
-<td>内存使用</td>
-<td>低</td>
-<td>高</td>
-<td>中等</td>
-<td>低</td>
-<td>高</td>
-</tr>
-<tr>
-<td>批量插入的速度</td>
-<td>高</td>
-<td>低</td>
-<td>高</td>
-<td>高</td>
-<td>高</td>
-</tr>
-<tr>
-<td>支持外键</td>
-<td></td>
-<td>支持</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-
-          
         
       
     </div>
@@ -2015,7 +1844,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2063,7 +1892,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2074,7 +1903,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2085,7 +1914,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">32</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2151,7 +1980,7 @@
 
 
 
-  <div class="footer-custom"><a class="theme-link" href="http://www.miitbeian.gov.cn/">浙ICP备17030765号-1</a> <a rel="external nofollow" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010602008456" class="theme-link"><img style="display:inline-block;" src="/static/1905/ghs.png">浙公网安备 33010602008456号</a></div>
+  <div class="footer-custom"><a class="theme-link" href="http://www.beian.miit.gov.cn/" target="_blank">浙ICP备17030765号-1</a> <a rel="external nofollow" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010602008456" class="theme-link" target="_blank"><img style="display:inline-block;" src="/static/1905/ghs.png">浙公网安备 33010602008456号</a></div>
 
 
         
